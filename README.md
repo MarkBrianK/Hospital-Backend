@@ -21,6 +21,6 @@ Things you may want to cover:
 
 - Deployment instructions
 
-- Ian and Group\*
-- Check if master is well protected
+- Ian and Group
+- hehgqwgasdfghjk
 - ...

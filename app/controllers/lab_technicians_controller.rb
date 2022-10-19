@@ -2,8 +2,8 @@ class LabTechniciansController < ApplicationController
 
       #GET/doc
       def index
-        Labtech = LabTechnician.all
-        render json: Labtech
+        labtech = LabTechnician.all
+        render json: labtech
     end
 
 end

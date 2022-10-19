@@ -18,6 +18,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_093328) do
     t.integer "patient_id"
     t.integer "ticket_number"
     t.string "ticket_item"
+  end
+  create_table "pharmacies", force: :cascade do |t|
+    t.string "patient_name"
+    t.integer "ticket_id"
+    t.string "remarks"
+    t.string "inventory_item"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

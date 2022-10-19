@@ -1,0 +1,2 @@
+class LabTechnician < ApplicationRecord
+end

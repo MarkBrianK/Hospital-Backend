@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_121639) do
 
   create_table "accountants", force: :cascade do |t|
     t.integer "patient_id"
-    t.string "cost"
+    t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_121639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+  
   create_table "tickets", force: :cascade do |t|
     t.integer "patient_id"
     t.integer "ticket_number"
@@ -72,5 +72,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_121639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 end

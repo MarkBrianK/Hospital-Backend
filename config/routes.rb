@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :tickets
+  resources :accountants
+  resources :lab_technicians
+  resources :staffs
+  resources :pharmacies
+  resources :doctors
   resources :patients
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -10,8 +10,8 @@ class CreatePatients < ActiveRecord::Migration[7.0]
       t.string :guardian
       t.string :patient_status
       t.string :image
-      t.integer :doc_id
-      t.string :ticket_id
+      t.integer :doctor_id
+      t.integer :ticket_id
 
       t.timestamps
     end

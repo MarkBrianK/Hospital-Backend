@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :laboratories
   resources :pharmacies
   resources :accountants
   resources :staffs

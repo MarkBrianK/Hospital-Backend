@@ -9,8 +9,13 @@ class PharmaciesController < ApplicationController
     render json:pharmacies
   end
   def create
+    pharmacies = Pharmacy.create(pharmacy_params)
+    render  json: pharmacies
   end
   def update
+
+
+    pharmacies  = Pharmacy.find_ by(params)
   end
   def destroy
   end

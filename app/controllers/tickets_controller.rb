@@ -1,17 +1,17 @@
 class TicketsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :not_found_response
-   
+
     def index
-        all tickets = Ticket.all
+        all_tickets = Ticket.all
         render json: all_tickets
     end
-    
+
 
 
     def show
         ticket = Ticket.find_by(id: params[:id])
-        if ticket_to_get
-            render json: ticket_to_get
+        if ticket
+            render json: ticket
         else
             render json: { error:"Ticket Not Found"}, status: :not_found
         end
@@ -30,13 +30,13 @@ class TicketsController < ApplicationController
     end
 
 
-    
+
     def destroy
         ticket_to_delete = Ticket.find_by(id: params[:id])
         if
             ticket_to_delete.valid?
-            ticket_to_delete.destroy 
-            render json:  {message: "deleted successfully"} 
+            ticket_to_delete.destroy
+            render json:  {message: "deleted successfully"}
             head :no_content
         else
             render json: {error: "requested resource not found"}, status: not_found

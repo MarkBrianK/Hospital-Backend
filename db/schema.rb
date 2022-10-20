@@ -74,7 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_161355) do
   create_table "tickets", force: :cascade do |t|
     t.integer "ticket_number"
     t.string "ticket_item"
-    t.integer "lab_number"
+    t.integer "laboratory_id"
     t.string "bill"
     t.string "bill_status"
     t.integer "patient_id"

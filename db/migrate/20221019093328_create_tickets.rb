@@ -4,7 +4,6 @@ class CreateTickets < ActiveRecord::Migration[7.0]
       t.integer :patient_id
       t.integer :ticket_number
       t.string :ticket_item
-
       t.timestamps
     end
   end

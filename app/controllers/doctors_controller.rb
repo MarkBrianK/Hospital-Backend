@@ -1,7 +1,6 @@
 class DoctorsController < ApplicationController
 
-      #POST/docs
- def create
+  def create
     doc = Doctor.create!(doc_params)
     doc = Doctor.find(params[:id])
     render json: doc
@@ -23,13 +22,12 @@ end
         doc = Doctor.find(params[:id])
         doc.update!(doc_params)
         render json: doc
-        
+
     end
 
-    private 
+    private
 
     def doc_params
-        params.permit(:specializtion, :reg_no)
+        params.permit(:specializtion, :reg_no, :consultation_room,:staff_id)
     end
 end
-

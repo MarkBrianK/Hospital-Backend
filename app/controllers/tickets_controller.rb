@@ -23,7 +23,7 @@ class TicketsController < ApplicationController
         ticket = Ticket.create(ticket_params)
         if
             ticket_to_get.valid?
-            render json:ticket_to_create, status: :created
+            render json: ticket_to_create, status: :created
         else
             render json: {error: ticket_to_create.errors}, status: unprocessable_entity
         end

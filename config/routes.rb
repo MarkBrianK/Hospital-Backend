@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
   resources :users
+
+  # auth routes start
+  get "/users", to: "users#index"
+  # retreve user data from db using sessions hash
+  get "/me", to: "users#show"
+  post "/signup", to: "users#create"
+  # session logout - clears user of session
+  delete "/logout", to: "sessions#destroy"
+  # sessions create login
+  post "/login", to: "sessions#create"
+
+  # 
+  # get "/auth", to: ""
+  # auth routes end
+
+
   resources :accountants
   resources :lab_technicians
   resources :staffs

@@ -30,6 +30,7 @@ class TicketsController < ApplicationController
     end
 
 
+    
     def destroy
         ticket_to_delete = Ticket.find_by(id: params[:id])
         if

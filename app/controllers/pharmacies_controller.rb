@@ -15,9 +15,14 @@ class PharmaciesController < ApplicationController
   def update
 
 
-    pharmacies  = Pharmacy.find_ by(params)
+    pharmacies  = Pharmacy.find_ by(params[:id])
+    pharmacies.update(pharmacy_params)
+    render json: pharmacies
   end
   def destroy
+    pharmacies = Pharmacy.find_by(params[:id])
+    pharmacies.destroy
+    head :no_content
   end
 
 

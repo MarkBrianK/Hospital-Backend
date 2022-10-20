@@ -1,6 +1,6 @@
 class LabTechniciansController < ApplicationController
 
-      #GET/doc
+      #GET/labtech
       def index
         labtech = LabTechnician.all
         render json: labtech

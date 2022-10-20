@@ -4,8 +4,8 @@ class AccountantsController < ApplicationController
         accountants = Accountant.all
         render json: accountants
     end
-    def show 
-        accountant = Accountant.all
+    def show
+        accountant = Accountant.find_by(params[:id])
         if accountant
             render json: accountant
         else

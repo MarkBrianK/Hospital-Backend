@@ -34,4 +34,3 @@ class PharmaciesController < ApplicationController
   end
 
 end
-

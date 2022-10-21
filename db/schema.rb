@@ -10,45 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_19_183801) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_20_161355) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "doctors", force: :cascade do |t|
-    t.string "name"
-    t.string "specialization"
-    t.integer "reg_number"
+  create_table "accountants", force: :cascade do |t|
+    t.string "bill"
+    t.integer "patient_id"
+    t.integer "ticket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "lab_technicians", force: :cascade do |t|
-    t.string "name"
+  create_table "doctors", force: :cascade do |t|
+    t.string "specialization"
+    t.integer "reg_no"
+    t.string "consultation_room"
+    t.integer "staff_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "laboratories", force: :cascade do |t|
+    t.integer "ticket_id"
+    t.string "remarks"
+    t.integer "lab_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "patient_name"
+    t.string "name"
     t.date "reg_date"
-    t.date "birth_date"
     t.string "gender"
     t.string "contact_no"
     t.string "email"
-    t.string "guardian"
+    t.string "gurdian"
     t.string "patient_status"
-    t.string "image"
     t.integer "doctor_id"
-    t.integer "ticket_id"
+    t.string "doctor_remarks"
+    t.string "laboratory_comments"
+    t.string "doctors_prescription"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "pharmacies", force: :cascade do |t|
-    t.integer "patient_id"
-    t.integer "ticket_id"
     t.string "remarks"
-    t.string "inventory_item"
+    t.string "inventory_id"
+    t.integer "ticket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,14 +66,27 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_183801) do
   
   create_table "staffs", force: :cascade do |t|
     t.string "name"
+    t.string "role"
+    t.string "shift"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.integer "patient_id"
     t.integer "ticket_number"
     t.string "ticket_item"
+    t.integer "laboratory_id"
+    t.string "bill"
+    t.string "bill_status"
+    t.integer "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email", null: false
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

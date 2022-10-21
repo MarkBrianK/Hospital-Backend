@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
 
+
     # @method GET
     # @access Private
     # endpoint /patients
@@ -73,6 +74,6 @@ class PatientsController < ApplicationController
 
     private
     def patient_params
-        params.require(:patient).permit(:patient_name, :reg_date, :birt_date, :gender, :contact_no, :email, :guardian, :patient_status, :image, :doctor_id, :ticket_id) 
+        params.require(:patient).permit(:patient_name, :reg_date, :birt_date, :gender, :contact_no, :email, :guardian, :patient_status, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription)
     end
 end

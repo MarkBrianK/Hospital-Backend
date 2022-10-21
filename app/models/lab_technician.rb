@@ -1,2 +1,0 @@
-class LabTechnician < ApplicationRecord
-end

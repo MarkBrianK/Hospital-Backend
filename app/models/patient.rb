@@ -1,3 +1,4 @@
 class Patient < ApplicationRecord
-    belongs_to :doctors
+
+  has_many :tickets
 end

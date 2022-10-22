@@ -1,3 +1,4 @@
 class Doctor < ApplicationRecord
-    has_many :patients, through: :tickets
+
+  has_many :patients
 end

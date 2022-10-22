@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_161355) do
     t.datetime "updated_at", null: false
   end
 
+  
   create_table "staffs", force: :cascade do |t|
     t.string "name"
     t.string "role"

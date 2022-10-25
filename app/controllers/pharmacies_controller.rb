@@ -1,35 +1,35 @@
 class PharmaciesController < ApplicationController
-  def index
+   def index
     pharmacies = Pharmacy.all
 
     render json: pharmacies
-  end
+   end
 
-  def show
+   def show
     pharmacies = Pharmacy.find(params[:id])
     render json: pharmacies
-  end
+   end
   
-  def create
+   def create
     pharmacies = Pharmacy.create(pharmacy_params)
     render json: pharmacies
-  end
+   end
  
-  def update
+   def update
     pharmacies = Pharmacy.find_ by(params[:id])
     pharmacies.update(pharmacy_params)
     render json: pharmacies
-  end
+   end
 
-  def destroy
+   def destroy
     pharmacies = Pharmacy.find_by(params[:id])
     pharmacies.destroy
     head :no_content
-  end
+   end
 
   private
 
-  def pharmacy_params
+   def pharmacy_params
     params.permit(:ticket_id, :remarks, :inventory_item)
-  end
+   end
 end

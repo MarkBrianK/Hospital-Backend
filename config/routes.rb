@@ -1,27 +1,30 @@
 Rails.application.routes.draw do
-  resources :laboratories
-  resources :pharmacies
-  resources :users
+  # resources :users
+  devise_for :admins, path: 'admin', path_names:{
+    sign_in: 'login',
+    sign_out: 'signout',
+    registration: 'signup'
+  },
+  controllers:{
+    sessions: 'admin/sessions',
+    password: 'admin/passwords',
+    registrations: 'admin/registrations'
+  }
 
-  # auth routes start
-  get "/users", to: "users#index"
-  # retreve user data from db using sessions hash
-  get "/me", to: "users#show"
-  post "/signup", to: "users#create"
-  # session logout - clears user of session
-  delete "/logout", to: "sessions#destroy"
-  # sessions create login
-  post "/login", to: "sessions#create"
+  devise_for :users, path: 'users', path_names:{
+    sign_in: 'login',
+    sign_out: 'signout',
+    registration: 'signup'
+  },
 
-  #
-  # get "/auth", to: ""
-  # auth routes end
+  controllers:{
+    sessions: 'users/devise/sessions',
+    password: 'users/devise/passwords',
+    registrations: 'users/devise/registrations'
+  }
 
-
-  resources :accountants
-  resources :staffs
-  resources :tickets
-  resources :patients
-  resources :doctors
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Defines the root path route ("/")
+  # root "articles#index"
 end

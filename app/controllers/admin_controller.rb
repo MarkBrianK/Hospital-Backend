@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 
-    before_action :authenticat_user!
+    before_action :authenticate_user!
 
     private
 

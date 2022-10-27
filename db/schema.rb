@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_132055) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_25_114421) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -35,6 +35,34 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_132055) do
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_admins_on_unlock_token", unique: true
+  end
+
+  create_table "managers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_managers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_managers_on_reset_password_token", unique: true
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "ticket_no"
+    t.string "patient_no"
+    t.string "reg_date"
+    t.string "address"
+    t.string "dob"
+    t.string "contact_no"
+    t.string "email"
+    t.string "guardian"
+    t.string "relation"
+    t.string "gender"
+    t.string "patient_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

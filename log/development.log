@@ -1,0 +1,1903 @@
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221024131614)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024131614"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-24 13:17:14.546835"], ["updated_at", "2022-10-24 13:17:14.546835"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateAdmins (20221024132055)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024132055"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for 127.0.0.1 at 2022-10-24 16:57:13 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 16:58:12 +0300
+  
+SyntaxError (/home/moringa/Desktop/authy/app/controllers/users/devise/registrations_controller.rb:82: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users/devise/registrations_controller.rb:82: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users/devise/registrations_controller.rb:82: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 16:58:57 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 400 Bad Request in 37ms (Allocations: 13770)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users/devise/registrations_controller.rb:80:in `sign_up_params'
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 17:00:10 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000561faeb86608>, params: {"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (4.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alvin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 480ms (Views: 0.2ms | ActiveRecord: 11.8ms | Allocations: 26072)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 17:00:24 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fcabc2e7410>, params: {"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alvin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alvin@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-24 14:00:24.747180"], ["updated_at", "2022-10-24 14:00:24.747180"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 330ms (ActiveRecord: 11.0ms | Allocations: 3892)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+actionpack (7.0.4) lib/action_dispatch/request/session.rb:253:in `load_for_write!'
+actionpack (7.0.4) lib/action_dispatch/request/session.rb:151:in `[]='
+warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
+warden (1.2.9) lib/warden/proxy.rb:187:in `set_user'
+devise (4.8.1) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:107:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 17:02:44 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fcabc136030>, params: {"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"alvin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alvin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 324ms (Views: 1.0ms | ActiveRecord: 7.4ms | Allocations: 3457)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 17:03:07 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fcabc0fb340>, params: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ombiji@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ombiji@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-24 14:03:08.187327"], ["updated_at", "2022-10-24 14:03:08.187327"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 340ms (ActiveRecord: 15.1ms | Allocations: 3775)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+actionpack (7.0.4) lib/action_dispatch/request/session.rb:253:in `load_for_write!'
+actionpack (7.0.4) lib/action_dispatch/request/session.rb:151:in `[]='
+warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
+warden (1.2.9) lib/warden/proxy.rb:187:in `set_user'
+devise (4.8.1) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:107:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 17:03:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f53005c2dd0>, params: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ombiji@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 483ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 37782)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 17:03:48 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5300b0c660>, params: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "omb@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "omb@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-24 14:03:49.177150"], ["updated_at", "2022-10-24 14:03:49.177150"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 477ms (Views: 0.8ms | ActiveRecord: 9.9ms | Allocations: 4362)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/admin" for 127.0.0.1 at 2022-10-24 21:07:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/admin"):
+  
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-24 21:08:26 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 40ms (ActiveRecord: 0.0ms | Allocations: 15044)
+
+
+Processing by Admin::SessionsController#new as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 200 OK in 32ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 17607)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-24 21:08:53 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 189)
+
+
+Processing by Admin::SessionsController#new as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 277)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2022-10-24 21:09:02 +0300
+Processing by Admin::SessionsController#new as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 363)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:09:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:10:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:10:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:11:53 +0300
+  
+SyntaxError (/home/moringa/Desktop/authy/config/routes.rb:7: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  resources :users
+            ^
+/home/moringa/Desktop/authy/config/routes.rb:8: syntax error, unexpected {, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+  controllers:{
+              ^
+):
+  
+config/routes.rb:7: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+config/routes.rb:8: syntax error, unexpected {, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+config/routes.rb:7: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+config/routes.rb:8: syntax error, unexpected {, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:12:36 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.0ms | Allocations: 2251)
+
+
+  
+NoMethodError (undefined method `authenticat_user!' for #<UsersController:0x000000000104a0>
+Did you mean?  authenticate_user!):
+  
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:13:09 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 14ms (ActiveRecord: 2.5ms | Allocations: 869)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:09 +0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.8ms | Allocations: 660)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 135)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:44 +0300
+Processing by UsersController#show as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"login", "user"=>{"email"=>"omb@gmail.com"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-24 21:14:24 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 24ms (ActiveRecord: 0.0ms | Allocations: 12913)
+
+
+Processing by Users::Devise::SessionsController#new as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 200 OK in 41ms (Views: 1.2ms | ActiveRecord: 1.1ms | Allocations: 16787)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-24 21:14:52 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.0ms | Allocations: 187)
+
+
+Processing by Users::Devise::SessionsController#new as */*
+  Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 274)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 21:15:28 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f298d0a10f0>, params: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "boil@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "boil@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-24 18:15:28.382667"], ["updated_at", "2022-10-24 18:15:28.382667"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 322ms (Views: 0.2ms | ActiveRecord: 5.9ms | Allocations: 5254)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-24 21:15:58 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms | Allocations: 5635)
+
+
+  
+NameError (undefined local variable or method `flash' for #<Users::Devise::SessionsController:0x0000000001bc10>):
+  
+devise (4.8.1) app/controllers/devise_controller.rb:159:in `set_flash_message'
+devise (4.8.1) app/controllers/devise_controller.rb:115:in `require_no_authentication'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/login" for 127.0.0.1 at 2022-10-24 21:16:09 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms | Allocations: 3596)
+
+
+  
+NameError (undefined local variable or method `flash' for #<Users::Devise::SessionsController:0x0000000001bd28>):
+  
+devise (4.8.1) app/controllers/devise_controller.rb:159:in `set_flash_message'
+devise (4.8.1) app/controllers/devise_controller.rb:115:in `require_no_authentication'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:16:26 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"boil@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 2224)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:17:12 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"boil@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 5.7ms | ActiveRecord: 3.1ms | Allocations: 4702)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:17:33 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"boil@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 3.1ms | ActiveRecord: 2.0ms | Allocations: 4701)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:17:51 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"boil@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 5.0ms | ActiveRecord: 3.0ms | Allocations: 4671)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:17:53 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"boil@gmail.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 2.9ms | ActiveRecord: 0.8ms | Allocations: 2162)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:18:05 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"boil@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 3.3ms | ActiveRecord: 2.6ms | Allocations: 4701)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:18:32 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"boil@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 3.9ms | ActiveRecord: 2.7ms | Allocations: 4681)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:18:41 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"boil@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 95ms (Views: 5.0ms | ActiveRecord: 2.8ms | Allocations: 32365)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-24 21:18:57 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"boil@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"boil@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 5.7ms | ActiveRecord: 3.2ms | Allocations: 4667)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-24 21:19:31 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"email"=>"alvo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"alvo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f46085b5d60>, params: {"email"=>"alvo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"email"=>"alvo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "alvo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alvo@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-24 18:19:31.879102"], ["updated_at", "2022-10-24 18:19:31.879102"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 429ms (ActiveRecord: 8.5ms | Allocations: 9657)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<Admin:0x000055d2aa616bb0>
+Did you mean?  password):
+  
+app/controllers/admin/registrations_controller.rb:71:in `respond_with'
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-24 21:22:11 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"email"=>"alvo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"alvo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x000055d2ab1fa8c8>, params: {"email"=>"alvo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"email"=>"alvo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "alvo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 339ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 5479)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-24 21:22:27 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"email"=>"ramsy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"ramsy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f4608f60c70>, params: {"email"=>"ramsy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"email"=>"ramsy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "ramsy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ramsy@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-24 18:22:27.370059"], ["updated_at", "2022-10-24 18:22:27.370059"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 343ms (ActiveRecord: 6.5ms | Allocations: 6542)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<Admin:0x000055d2ab0eddb8>
+Did you mean?  password):
+  
+app/controllers/admin/registrations_controller.rb:71:in `respond_with'
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-24 21:23:15 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f46087a09b8>, params: {"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "tom@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.4ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "tom@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-24 18:23:15.663299"], ["updated_at", "2022-10-24 18:23:15.663299"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 9.8ms | Allocations: 9458)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<Admin:0x000055d2aa9928e8>
+Did you mean?  password):
+  
+app/controllers/admin/registrations_controller.rb:71:in `respond_with'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-24 21:26:18 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 4ms (Allocations: 401)
+
+
+Processing by Admin::SessionsController#new as */*
+  Parameters: {"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.9ms | Allocations: 5510)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<Admin id: nil, email: "", created_at: nil, updated_at: nil>
+Did you mean?  password):
+  
+app/controllers/admin/sessions_controller.rb:32:in `respond_with'
+Started POST "/users/login" for 127.0.0.1 at 2022-10-24 21:27:34 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.9ms | Allocations: 5960)
+
+
+  
+NameError (undefined local variable or method `flash' for #<Users::Devise::SessionsController:0x0000000001bc88>):
+  
+devise (4.8.1) app/controllers/devise_controller.rb:159:in `set_flash_message'
+devise (4.8.1) app/controllers/devise_controller.rb:115:in `require_no_authentication'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-25 08:32:54 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"tom1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"tom1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.6ms | Allocations: 5751)
+
+
+  
+NameError (undefined local variable or method `flash' for #<Users::Devise::RegistrationsController:0x000000000213e0>):
+  
+devise (4.8.1) app/controllers/devise_controller.rb:159:in `set_flash_message'
+devise (4.8.1) app/controllers/devise_controller.rb:115:in `require_no_authentication'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-25 08:34:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"tom1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"tom1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fcfc01154d0>, params: {"email"=>"tom1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"tom1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tom1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "tom1@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 05:34:57.021048"], ["updated_at", "2022-10-25 05:34:57.021048"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 491ms (ActiveRecord: 7.0ms | Allocations: 40322)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd0cc2d90>
+Did you mean?  password):
+  
+app/controllers/users/devise/registrations_controller.rb:69:in `respond_with'
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 08:43:50 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 3.6ms | Allocations: 4054)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd066ea98>
+Did you mean?  password):
+  
+app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 09:15:31 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 4.0ms | Allocations: 6141)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd0d97b08>
+Did you mean?  password):
+  
+app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 09:16:09 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 300)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 09:17:16 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 5.4ms | Allocations: 3754)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd097de78>
+Did you mean?  password):
+  
+app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 09:18:08 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.9ms | Allocations: 3754)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<User:0x0000559fc451ab58>
+Did you mean?  password):
+  
+app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 09:43:24 +0300
+  
+SyntaxError (/home/moringa/Desktop/authy/app/controllers/users/devise/sessions_controller.rb:49: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users/devise/sessions_controller.rb:49: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users/devise/sessions_controller.rb:49: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 09:45:10 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.5ms | Allocations: 6161)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd064b110>
+Did you mean?  password):
+  
+app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
+Started GET "/users" for 127.0.0.1 at 2022-10-25 10:21:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/user" for 127.0.0.1 at 2022-10-25 10:21:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-10-25 10:22:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users/login" for 127.0.0.1 at 2022-10-25 10:22:32 +0300
+Processing by Users::Devise::SessionsController#new as */*
+  Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 3.3ms | Allocations: 5144)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<User id: nil, email: "", created_at: nil, updated_at: nil>
+Did you mean?  password):
+  
+app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
+Started GET "/users/" for 127.0.0.1 at 2022-10-25 10:22:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/admin" for 127.0.0.1 at 2022-10-25 10:23:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-10-25 10:23:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started POST "/users" for 127.0.0.1 at 2022-10-25 10:23:16 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-10-25 10:23:39 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-10-25 10:24:14 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"tomyyy@gmail.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 56ms (Views: 3.6ms | ActiveRecord: 2.0ms | Allocations: 32491)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-10-25 10:30:46 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+Started POST "/users" for 127.0.0.1 at 2022-10-25 10:44:40 +0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2022-10-25 10:46:40 +0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/admin" for 127.0.0.1 at 2022-10-25 10:46:48 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/admin"):
+  
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:46:55 +0300
+  
+SyntaxError (/home/moringa/Desktop/authy/app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected local variable or method, expecting ')'
+...er.valid_password??(user_params[:password]))
+...                    ^~~~~~~~~~~
+/home/moringa/Desktop/authy/app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected ')', expecting `end'
+...sword??(user_params[:password]))
+...                              ^
+):
+  
+app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected ')', expecting `end'
+app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected ')', expecting `end'
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:48:05 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com", "session"=>{"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com"}}
+Completed 500 Internal Server Error in 25ms (Allocations: 2739)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<Admin::SessionsController:0x00000000026048>
+Did you mean?  user_path):
+  
+app/controllers/admin/sessions_controller.rb:11:in `create'
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:49:27 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com", "session"=>{"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com"}}
+Completed 500 Internal Server Error in 3ms (Allocations: 704)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
+  
+app/controllers/admin/sessions_controller.rb:11:in `create'
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:50:18 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com", "session"=>{"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com"}}
+Completed 500 Internal Server Error in 15ms (Allocations: 2582)
+
+
+  
+NameError (undefined local variable or method `user_path' for #<Admin::SessionsController:0x00000000030ae8>):
+  
+app/controllers/admin/sessions_controller.rb:11:in `create'
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:53:55 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com", "session"=>{"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd455026850>, params: {"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com"}} }[0m
+  [1m[36mUser Load (26.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "boil@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd455026850>, params: {"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com"}} }[0m
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd455026850>, params: {"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"boil", "password"=>"[FILTERED]", "email"=>"boil@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 972ms (Views: 0.3ms | ActiveRecord: 33.4ms | Allocations: 3402)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 10:54:35 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "registration"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000562bd3decb00>, params: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 341ms (Views: 1.2ms | ActiveRecord: 2.4ms | Allocations: 7841)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 10:54:55 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "registration"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000562bd3c75f88>, params: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (21.2ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "rick@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 07:54:56.111912"], ["updated_at", "2022-10-25 07:54:56.111912"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 361ms (Views: 0.1ms | ActiveRecord: 27.9ms | Allocations: 4360)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:55:05 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd454e74958>, params: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 650)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:55:23 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameter: :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd454e41030>, params: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 642)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:57:11 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameter: :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd454df6f30>, params: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 9.3ms | Allocations: 642)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 10:57:23 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "registration"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fd454dc35e0>, params: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 331ms (Views: 0.2ms | ActiveRecord: 5.3ms | Allocations: 3424)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:57:57 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+Completed 400 Bad Request in 1ms (Allocations: 262)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/admin/sessions_controller.rb:57:in `user_params'
+app/controllers/admin/sessions_controller.rb:11:in `create'
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:58:18 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameter: :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd454c331a8>, params: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 7.0ms | Allocations: 1627)
+
+
+Started POST "/admin/singout" for 127.0.0.1 at 2022-10-25 10:59:14 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/admin/singout"):
+  
+Started POST "/admin/singout" for 127.0.0.1 at 2022-10-25 10:59:27 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/admin/singout"):
+  
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:59:47 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameter: :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd4540b1348>, params: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 40ms (Views: 0.5ms | ActiveRecord: 11.1ms | Allocations: 639)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 11:01:28 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "session"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}}
+Completed 500 Internal Server Error in 24ms (Allocations: 2605)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<Users::Devise::SessionsController:0x00000000045c18>
+Did you mean?  user_password_path):
+  
+app/controllers/users/devise/sessions_controller.rb:19:in `create'
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 11:01:50 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "session"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd454d9a5a0>, params: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bofulo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+Completed 200 OK in 29ms (Views: 1.6ms | ActiveRecord: 4.0ms | Allocations: 1636)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-25 11:02:01 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "registration"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fd454c7ac38>, params: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bofulo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "bofulo@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 08:02:02.083906"], ["updated_at", "2022-10-25 08:02:02.083906"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 416ms (Views: 0.3ms | ActiveRecord: 13.9ms | Allocations: 7475)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 11:02:11 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "session"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd454b6a988>, params: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bofulo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameters: :username, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd454b6a988>, params: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 305ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1713)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:02:51 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd454b2ec58>, params: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 0.9ms | Allocations: 663)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 11:03:01 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "registration"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fd454abb820>, params: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 328ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 5818)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:03:08 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd454865238>, params: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 649)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:03:28 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fd4544e5428>, params: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 1637)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:03:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5f981138f8>, params: {"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"rick", "password"=>"[FILTERED]", "email"=>"rick@gmail.com"}} }[0m
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rick@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 78ms (Views: 0.4ms | ActiveRecord: 5.1ms | Allocations: 16898)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 11:04:06 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com", "registration"=>{"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5fa4c322c8>, params: {"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "morty@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (2.4ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "morty@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 08:04:07.104658"], ["updated_at", "2022-10-25 08:04:07.104658"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 369ms (Views: 0.2ms | ActiveRecord: 9.7ms | Allocations: 22533)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:04:13 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com", "session"=>{"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5fa4890f20>, params: {"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com"}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "morty@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 665)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 11:05:04 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "session"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5fa48600a0>, params: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}} }[0m
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bofulo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameters: :username, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5fa48600a0>, params: {"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"username"=>"bofulo", "password"=>"[FILTERED]", "email"=>"bofulo@gmail.com"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 318ms (Views: 2.0ms | ActiveRecord: 7.1ms | Allocations: 3635)
+
+
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:07:29 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com", "session"=>{"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com"}}
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5fa40a7750>, params: {"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com"}} }[0m
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "morty@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+[31mUnpermitted parameters: :username, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5fa40a7750>, params: {"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"username"=>"morty", "password"=>"[FILTERED]", "email"=>"morty@gmail.com"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:13:in `create'
+Completed 200 OK in 317ms (Views: 0.6ms | ActiveRecord: 6.9ms | Allocations: 6824)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-25 11:12:47 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5d0c1d3600>, params: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "leroythomas051@gmal.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "leroythomas051@gmal.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 08:12:49.659012"], ["updated_at", "2022-10-25 08:12:49.659012"]]
+  [1m[36mTRANSACTION (112.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 802ms (Views: 0.3ms | ActiveRecord: 114.5ms | Allocations: 38460)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 11:12:59 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5d0001e410>, params: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "leroythomas051@gmal.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5d0001e410>, params: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 379ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 2405)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 11:13:26 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5d0400c518>, params: {"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "leroythomas1@gmal.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "leroythomas1@gmal.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 08:13:26.559336"], ["updated_at", "2022-10-25 08:13:26.559336"]]
+  [1m[36mTRANSACTION (94.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 482ms (Views: 0.2ms | ActiveRecord: 96.0ms | Allocations: 6488)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:13:37 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055586e290c90>, params: {"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "leroythomas1@gmal.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055586e290c90>, params: {"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:13:in `create'
+Completed 200 OK in 387ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 2086)
+
+
+Started POST "/admin/logout" for 127.0.0.1 at 2022-10-25 11:13:49 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/admin/logout"):
+  
+Started DELETE "/admin/logout" for 127.0.0.1 at 2022-10-25 11:14:00 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/admin/logout"):
+  
+Started DELETE "/users/logout" for 127.0.0.1 at 2022-10-25 11:14:11 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/users/logout"):
+  
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-25 11:15:09 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+  Parameters: {"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 3963)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-25 11:17:21 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5d0c8e9228>, params: {"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "markbrian@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "markbrian@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 08:17:22.170300"], ["updated_at", "2022-10-25 08:17:22.170300"]]
+  [1m[36mTRANSACTION (112.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 473ms (Views: 0.2ms | ActiveRecord: 112.8ms | Allocations: 4001)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 11:17:37 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5d18ec0050>, params: {"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "markbrian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5d18ec0050>, params: {"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 403ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 1698)
+
+
+Started POST "/users/signout" for 127.0.0.1 at 2022-10-25 11:17:55 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/signout"):
+  
+Started POST "/users/logout" for 127.0.0.1 at 2022-10-25 11:18:03 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/logout"):
+  
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-25 11:18:15 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+  Parameters: {"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1444)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 11:18:50 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5d18d7d260>, params: {"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "ianngila@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ianngila@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 08:18:50.933733"], ["updated_at", "2022-10-25 08:18:50.933733"]]
+  [1m[36mTRANSACTION (108.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 463ms (Views: 0.2ms | ActiveRecord: 109.1ms | Allocations: 4004)
+
+
+Started POST "/admin/signin" for 127.0.0.1 at 2022-10-25 11:18:59 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/admin/signin"):
+  
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:19:06 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5d18ccead0>, params: {"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "ianngila@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5d18ccead0>, params: {"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+Completed 200 OK in 364ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1117)
+
+
+Started DELETE "/admin/signout" for 127.0.0.1 at 2022-10-25 11:19:18 +0300
+Processing by Admin::SessionsController#destroy as */*
+  Parameters: {"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 2219)
+
+
+Started POST "/admin/signin" for 127.0.0.1 at 2022-10-25 11:25:10 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/admin/signin"):
+  
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 11:25:19 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5d0c5af080>, params: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "jess@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (31.8ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jess@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 08:25:19.798148"], ["updated_at", "2022-10-25 08:25:19.798148"]]
+  [1m[36mTRANSACTION (122.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 586ms (Views: 0.2ms | ActiveRecord: 161.7ms | Allocations: 4135)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-25 11:25:37 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/signin"):
+  
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 11:26:03 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5d0c491798>, params: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jess@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 687)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:26:19 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5d18b66d28>, params: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "jess@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5d18b66d28>, params: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+Completed 200 OK in 377ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1152)
+
+
+Started DELETE "/admin/signout" for 127.0.0.1 at 2022-10-25 11:26:33 +0300
+Processing by Admin::SessionsController#destroy as */*
+  Parameters: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 2311)
+
+
+  [1m[35m (178.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (196.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221024131614)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_unlock_token" ON "users" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024131614"]]
+  [1m[36mTRANSACTION (215.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateAdmins (20221024132055)
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_confirmation_token" ON "admins" ("confirmation_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_unlock_token" ON "admins" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024132055"]]
+  [1m[36mTRANSACTION (159.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-25 09:08:30.541389"], ["updated_at", "2022-10-25 09:08:30.541389"]]
+  [1m[36mTRANSACTION (90.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-25 12:08:47 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5d18691d70>, params: {"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testuser@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "testuser@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-25 09:08:48.191529"], ["updated_at", "2022-10-25 09:08:48.191529"]]
+  [1m[36mTRANSACTION (98.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 549ms (Views: 0.2ms | ActiveRecord: 102.3ms | Allocations: 6437)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-25 12:15:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5dc45fcca0>, params: {"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testuser@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "testuser@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["created_at", "2022-10-25 09:15:21.949486"], ["updated_at", "2022-10-25 09:15:21.949486"]]
+  [1m[36mTRANSACTION (4088.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 4796ms (Views: 0.2ms | ActiveRecord: 4091.5ms | Allocations: 43384)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-25 12:15:34 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/signin"):
+  
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 12:15:42 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5dac02a4e8>, params: {"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testuser@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5dac02a4e8>, params: {"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 345ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 2504)
+
+
+Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 12:16:07 +0300
+Processing by Admin::RegistrationsController#create as */*
+  Parameters: {"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Admin::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5da0014370>, params: {"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/registrations", "action"=>"create", "registration"=>{"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "testadmin@test.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.7ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "testadmin@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["created_at", "2022-10-25 09:16:07.452791"], ["updated_at", "2022-10-25 09:16:07.452791"]]
+  [1m[36mTRANSACTION (78.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 453ms (Views: 0.3ms | ActiveRecord: 80.4ms | Allocations: 9341)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 12:16:14 +0300
+Processing by Admin::SessionsController#create as */*
+  Parameters: {"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5db408f1b0>, params: {"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "testadmin@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:11:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Admin::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5db408f1b0>, params: {"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"admin/sessions", "action"=>"create", "session"=>{"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/sessions_controller.rb:13:in `create'
+Completed 200 OK in 374ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 2153)
+
+
+Started POST "/admin/signout" for 127.0.0.1 at 2022-10-25 12:16:38 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/admin/signout"):
+  
+Started DELETE "/admin/signout" for 127.0.0.1 at 2022-10-25 12:16:45 +0300
+Processing by Admin::SessionsController#destroy as */*
+  Parameters: {"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3068)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2022-10-25 12:43:26 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5db42728d8>, params: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "leroythomas051@gmal.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+Completed 200 OK in 66ms (Views: 0.6ms | ActiveRecord: 16.0ms | Allocations: 1523)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-25 12:43:37 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5da80142f0>, params: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "leroythomas051@gmal.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "leroythomas051@gmal.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["created_at", "2022-10-25 09:43:38.143475"], ["updated_at", "2022-10-25 09:43:38.143475"]]
+  [1m[36mTRANSACTION (136.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 449ms (Views: 0.2ms | ActiveRecord: 137.7ms | Allocations: 8521)
+
+

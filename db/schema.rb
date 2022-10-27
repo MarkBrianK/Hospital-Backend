@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_25_114421) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_27_184412) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -37,6 +37,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_114421) do
     t.index ["unlock_token"], name: "index_admins_on_unlock_token", unique: true
   end
 
+  create_table "laboratories", force: :cascade do |t|
+    t.string "test_name"
+    t.string "cost_of_test"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "managers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -61,6 +69,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_114421) do
     t.string "relation"
     t.string "gender"
     t.string "patient_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string "patient_name"
+    t.string "inventory_item"
+    t.string "item"
+    t.string "discount"
+    t.string "total_amount"
+    t.string "receipt_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

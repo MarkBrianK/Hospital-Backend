@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :laboratories
+  resources :tickets
   resources :patients
   # resources :users
 

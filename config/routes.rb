@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :patients
+  resources :users
+
   devise_for :managers, path: 'managers', path_names:{
-    sign_in: 'login',
+    sign_in: 'signin',
     sign_out: 'signout',
     registration: 'signup'
   }, controllers:{
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   }
   # resources :users
   devise_for :admins, path: 'admin', path_names:{
-    sign_in: 'login',
+    sign_in: 'signin',
     sign_out: 'signout',
     registration: 'signup'
   },
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
   }
 
   devise_for :users, path: 'users', path_names:{
-    sign_in: 'login',
+    sign_in: 'signin',
     sign_out: 'signout',
     registration: 'signup'
   },

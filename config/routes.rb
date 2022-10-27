@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :patients
-  resources :users
+  # resources :users
 
   devise_for :managers, path: 'managers', path_names:{
     sign_in: 'signin',

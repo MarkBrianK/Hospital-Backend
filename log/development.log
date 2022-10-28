@@ -9187,3 +9187,27 @@ Migrating to CreateLaboratories (20221027184412)
   [1m[36mTRANSACTION (111.6ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-10-28 11:21:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sospeter/.rvm/gems/ruby-2.7.4/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sospeter/.rvm/gems/ruby-2.7.4/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.8ms | Allocations: 665)
+Completed 200 OK in 42ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 6405)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 11:21:21 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 416)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-28 11:22:29 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"username"=>"json", "email"=>"jsonserver@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"username"=>"json", "email"=>"jsonserver@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f8c58bc3d60>, params: {"username"=>"json", "email"=>"jsonserver@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"username"=>"json", "email"=>"jsonserver@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jsonserver@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 432ms (Views: 0.6ms | ActiveRecord: 2.5ms | Allocations: 33619)
+
+

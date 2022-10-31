@@ -28,13 +28,13 @@ Migrating to DeviseCreateAdmins (20221024132055)
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Started GET "/users" for 127.0.0.1 at 2022-10-24 16:57:13 +0300
   [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (No route matches [GET] "/users"):
-  
+
 Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 16:58:12 +0300
-  
+
 SyntaxError (/home/moringa/Desktop/authy/app/controllers/users/devise/registrations_controller.rb:82: syntax error, unexpected end-of-input, expecting `end'):
-  
+
 app/controllers/users/devise/registrations_controller.rb:82: syntax error, unexpected end-of-input, expecting `end'
 app/controllers/users/devise/registrations_controller.rb:82: syntax error, unexpected end-of-input, expecting `end'
 Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 16:58:57 +0300
@@ -43,9 +43,9 @@ Processing by Users::Devise::RegistrationsController#create as */*
 Completed 400 Bad Request in 37ms (Allocations: 13770)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: user):
-  
+
 app/controllers/users/devise/registrations_controller.rb:80:in `sign_up_params'
 Started POST "/users/signup" for 127.0.0.1 at 2022-10-24 17:00:10 +0300
 Processing by Users::Devise::RegistrationsController#create as */*
@@ -68,9 +68,9 @@ Processing by Users::Devise::RegistrationsController#create as */*
 Completed 500 Internal Server Error in 330ms (ActiveRecord: 11.0ms | Allocations: 3892)
 
 
-  
+
 ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
-  
+
 actionpack (7.0.4) lib/action_dispatch/request/session.rb:253:in `load_for_write!'
 actionpack (7.0.4) lib/action_dispatch/request/session.rb:151:in `[]='
 warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
@@ -163,9 +163,9 @@ Processing by Users::Devise::RegistrationsController#create as */*
 Completed 500 Internal Server Error in 340ms (ActiveRecord: 15.1ms | Allocations: 3775)
 
 
-  
+
 ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
-  
+
 actionpack (7.0.4) lib/action_dispatch/request/session.rb:253:in `load_for_write!'
 actionpack (7.0.4) lib/action_dispatch/request/session.rb:151:in `[]='
 warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
@@ -264,9 +264,9 @@ Completed 200 OK in 477ms (Views: 0.8ms | ActiveRecord: 9.9ms | Allocations: 436
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Started POST "/admin" for 127.0.0.1 at 2022-10-24 21:07:58 +0300
   [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (No route matches [POST] "/admin"):
-  
+
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-24 21:08:26 +0300
 Processing by Admin::SessionsController#create as */*
   Parameters: {"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"omb@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -296,20 +296,20 @@ Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 363)
 
 
 Started GET "/users" for 127.0.0.1 at 2022-10-24 21:09:42 +0300
-  
+
 ActionController::RoutingError (No route matches [GET] "/users"):
-  
+
 Started GET "/users" for 127.0.0.1 at 2022-10-24 21:10:30 +0300
-  
+
 ActionController::RoutingError (No route matches [GET] "/users"):
-  
+
 Started GET "/users" for 127.0.0.1 at 2022-10-24 21:10:44 +0300
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (No route matches [GET] "/users"):
-  
+
 Started GET "/users" for 127.0.0.1 at 2022-10-24 21:11:53 +0300
-  
+
 SyntaxError (/home/moringa/Desktop/authy/config/routes.rb:7: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
   resources :users
             ^
@@ -317,7 +317,7 @@ SyntaxError (/home/moringa/Desktop/authy/config/routes.rb:7: syntax error, unexp
   controllers:{
               ^
 ):
-  
+
 config/routes.rb:7: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
 config/routes.rb:8: syntax error, unexpected {, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
 config/routes.rb:7: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
@@ -328,10 +328,10 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.0ms | Allocations: 2251)
 
 
-  
+
 NoMethodError (undefined method `authenticat_user!' for #<UsersController:0x000000000104a0>
 Did you mean?  authenticate_user!):
-  
+
 activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
 activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
 actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
@@ -407,9 +407,9 @@ Completed 401 Unauthorized in 14ms (ActiveRecord: 2.5ms | Allocations: 869)
 
 
 Started GET "/users/login" for 127.0.0.1 at 2022-10-24 21:13:09 +0300
-  
+
 AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
-  
+
 actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
 actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
 actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
@@ -567,9 +567,9 @@ Processing by Users::Devise::SessionsController#create as */*
 Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms | Allocations: 5635)
 
 
-  
+
 NameError (undefined local variable or method `flash' for #<Users::Devise::SessionsController:0x0000000001bc10>):
-  
+
 devise (4.8.1) app/controllers/devise_controller.rb:159:in `set_flash_message'
 devise (4.8.1) app/controllers/devise_controller.rb:115:in `require_no_authentication'
 activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
@@ -649,9 +649,9 @@ Processing by Users::Devise::SessionsController#create as */*
 Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms | Allocations: 3596)
 
 
-  
+
 NameError (undefined local variable or method `flash' for #<Users::Devise::SessionsController:0x0000000001bd28>):
-  
+
 devise (4.8.1) app/controllers/devise_controller.rb:159:in `set_flash_message'
 devise (4.8.1) app/controllers/devise_controller.rb:115:in `require_no_authentication'
 activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
@@ -817,10 +817,10 @@ Processing by Admin::RegistrationsController#create as */*
 Completed 500 Internal Server Error in 429ms (ActiveRecord: 8.5ms | Allocations: 9657)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<Admin:0x000055d2aa616bb0>
 Did you mean?  password):
-  
+
 app/controllers/admin/registrations_controller.rb:71:in `respond_with'
 Started POST "/admin/signup" for 127.0.0.1 at 2022-10-24 21:22:11 +0300
 Processing by Admin::RegistrationsController#create as */*
@@ -843,10 +843,10 @@ Processing by Admin::RegistrationsController#create as */*
 Completed 500 Internal Server Error in 343ms (ActiveRecord: 6.5ms | Allocations: 6542)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<Admin:0x000055d2ab0eddb8>
 Did you mean?  password):
-  
+
 app/controllers/admin/registrations_controller.rb:71:in `respond_with'
 Started POST "/admin/signup" for 127.0.0.1 at 2022-10-24 21:23:15 +0300
 Processing by Admin::RegistrationsController#create as */*
@@ -859,10 +859,10 @@ Processing by Admin::RegistrationsController#create as */*
 Completed 500 Internal Server Error in 377ms (ActiveRecord: 9.8ms | Allocations: 9458)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<Admin:0x000055d2aa9928e8>
 Did you mean?  password):
-  
+
 app/controllers/admin/registrations_controller.rb:71:in `respond_with'
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
@@ -878,10 +878,10 @@ Processing by Admin::SessionsController#new as */*
 Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.9ms | Allocations: 5510)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<Admin id: nil, email: "", created_at: nil, updated_at: nil>
 Did you mean?  password):
-  
+
 app/controllers/admin/sessions_controller.rb:32:in `respond_with'
 Started POST "/users/login" for 127.0.0.1 at 2022-10-24 21:27:34 +0300
 Processing by Users::Devise::SessionsController#create as */*
@@ -890,9 +890,9 @@ Processing by Users::Devise::SessionsController#create as */*
 Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.9ms | Allocations: 5960)
 
 
-  
+
 NameError (undefined local variable or method `flash' for #<Users::Devise::SessionsController:0x0000000001bc88>):
-  
+
 devise (4.8.1) app/controllers/devise_controller.rb:159:in `set_flash_message'
 devise (4.8.1) app/controllers/devise_controller.rb:115:in `require_no_authentication'
 activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
@@ -972,9 +972,9 @@ Processing by Users::Devise::RegistrationsController#create as */*
 Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.6ms | Allocations: 5751)
 
 
-  
+
 NameError (undefined local variable or method `flash' for #<Users::Devise::RegistrationsController:0x000000000213e0>):
-  
+
 devise (4.8.1) app/controllers/devise_controller.rb:159:in `set_flash_message'
 devise (4.8.1) app/controllers/devise_controller.rb:115:in `require_no_authentication'
 activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
@@ -1060,10 +1060,10 @@ Processing by Users::Devise::RegistrationsController#create as */*
 Completed 500 Internal Server Error in 491ms (ActiveRecord: 7.0ms | Allocations: 40322)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd0cc2d90>
 Did you mean?  password):
-  
+
 app/controllers/users/devise/registrations_controller.rb:69:in `respond_with'
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 08:43:50 +0300
 Processing by Users::Devise::SessionsController#create as */*
@@ -1072,10 +1072,10 @@ Processing by Users::Devise::SessionsController#create as */*
 Completed 500 Internal Server Error in 47ms (ActiveRecord: 3.6ms | Allocations: 4054)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd066ea98>
 Did you mean?  password):
-  
+
 app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 09:15:31 +0300
 Processing by Users::Devise::SessionsController#create as */*
@@ -1084,10 +1084,10 @@ Processing by Users::Devise::SessionsController#create as */*
 Completed 500 Internal Server Error in 65ms (ActiveRecord: 4.0ms | Allocations: 6141)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd0d97b08>
 Did you mean?  password):
-  
+
 app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 09:16:09 +0300
 Processing by Admin::SessionsController#create as */*
@@ -1102,10 +1102,10 @@ Processing by Users::Devise::SessionsController#create as */*
 Completed 500 Internal Server Error in 42ms (ActiveRecord: 5.4ms | Allocations: 3754)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd097de78>
 Did you mean?  password):
-  
+
 app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 09:18:08 +0300
 Processing by Users::Devise::SessionsController#create as */*
@@ -1114,15 +1114,15 @@ Processing by Users::Devise::SessionsController#create as */*
 Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.9ms | Allocations: 3754)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<User:0x0000559fc451ab58>
 Did you mean?  password):
-  
+
 app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 09:43:24 +0300
-  
+
 SyntaxError (/home/moringa/Desktop/authy/app/controllers/users/devise/sessions_controller.rb:49: syntax error, unexpected end-of-input, expecting `end'):
-  
+
 app/controllers/users/devise/sessions_controller.rb:49: syntax error, unexpected end-of-input, expecting `end'
 app/controllers/users/devise/sessions_controller.rb:49: syntax error, unexpected end-of-input, expecting `end'
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 09:45:10 +0300
@@ -1132,55 +1132,55 @@ Processing by Users::Devise::SessionsController#create as */*
 Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.5ms | Allocations: 6161)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<User:0x00007fcfd064b110>
 Did you mean?  password):
-  
+
 app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
 Started GET "/users" for 127.0.0.1 at 2022-10-25 10:21:47 +0300
-  
+
 ActionController::RoutingError (No route matches [GET] "/users"):
-  
+
 Started GET "/user" for 127.0.0.1 at 2022-10-25 10:21:59 +0300
-  
+
 ActionController::RoutingError (No route matches [GET] "/user"):
-  
+
 Started GET "/users" for 127.0.0.1 at 2022-10-25 10:22:12 +0300
-  
+
 ActionController::RoutingError (No route matches [GET] "/users"):
-  
+
 Started GET "/users/login" for 127.0.0.1 at 2022-10-25 10:22:32 +0300
 Processing by Users::Devise::SessionsController#new as */*
   Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
 Completed 500 Internal Server Error in 46ms (ActiveRecord: 3.3ms | Allocations: 5144)
 
 
-  
+
 NoMethodError (protected method `password_digest' called for #<User id: nil, email: "", created_at: nil, updated_at: nil>
 Did you mean?  password):
-  
+
 app/controllers/users/devise/sessions_controller.rb:32:in `respond_with'
 Started GET "/users/" for 127.0.0.1 at 2022-10-25 10:22:42 +0300
-  
+
 ActionController::RoutingError (No route matches [GET] "/users"):
-  
+
 Started GET "/admin" for 127.0.0.1 at 2022-10-25 10:23:08 +0300
-  
+
 ActionController::RoutingError (No route matches [GET] "/admin"):
-  
+
 Started GET "/users" for 127.0.0.1 at 2022-10-25 10:23:12 +0300
-  
+
 ActionController::RoutingError (No route matches [GET] "/users"):
-  
+
 Started POST "/users" for 127.0.0.1 at 2022-10-25 10:23:16 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/users"):
-  
+
 Started GET "/users" for 127.0.0.1 at 2022-10-25 10:23:39 +0300
   [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (No route matches [GET] "/users"):
-  
+
 Started GET "/users" for 127.0.0.1 at 2022-10-25 10:24:14 +0300
 Processing by UsersController#index as */*
   Parameters: {"email"=>"tomyyy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"tomyyy@gmail.com"}}
@@ -1191,13 +1191,13 @@ Completed 200 OK in 56ms (Views: 3.6ms | ActiveRecord: 2.0ms | Allocations: 3249
 
 
 Started POST "/login" for 127.0.0.1 at 2022-10-25 10:30:46 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/login"):
-  
+
 Started POST "/users" for 127.0.0.1 at 2022-10-25 10:44:40 +0300
-  
+
 AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
-  
+
 actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
 actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
 actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
@@ -1250,9 +1250,9 @@ puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
 Started POST "/users" for 127.0.0.1 at 2022-10-25 10:46:40 +0300
-  
+
 AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
-  
+
 actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
 actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
 actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
@@ -1305,11 +1305,11 @@ puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
 Started POST "/admin" for 127.0.0.1 at 2022-10-25 10:46:48 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/admin"):
-  
+
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:46:55 +0300
-  
+
 SyntaxError (/home/moringa/Desktop/authy/app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected local variable or method, expecting ')'
 ...er.valid_password??(user_params[:password]))
 ...                    ^~~~~~~~~~~
@@ -1317,7 +1317,7 @@ SyntaxError (/home/moringa/Desktop/authy/app/controllers/admin/sessions_controll
 ...sword??(user_params[:password]))
 ...                              ^
 ):
-  
+
 app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected local variable or method, expecting ')'
 app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected ')', expecting `end'
 app/controllers/admin/sessions_controller.rb:15: syntax error, unexpected local variable or method, expecting ')'
@@ -1328,10 +1328,10 @@ Processing by Admin::SessionsController#create as */*
 Completed 500 Internal Server Error in 25ms (Allocations: 2739)
 
 
-  
+
 NameError (undefined local variable or method `user_params' for #<Admin::SessionsController:0x00000000026048>
 Did you mean?  user_path):
-  
+
 app/controllers/admin/sessions_controller.rb:11:in `create'
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:49:27 +0300
 Processing by Admin::SessionsController#create as */*
@@ -1339,9 +1339,9 @@ Processing by Admin::SessionsController#create as */*
 Completed 500 Internal Server Error in 3ms (Allocations: 704)
 
 
-  
+
 ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
-  
+
 app/controllers/admin/sessions_controller.rb:11:in `create'
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:50:18 +0300
 Processing by Admin::SessionsController#create as */*
@@ -1349,9 +1349,9 @@ Processing by Admin::SessionsController#create as */*
 Completed 500 Internal Server Error in 15ms (Allocations: 2582)
 
 
-  
+
 NameError (undefined local variable or method `user_path' for #<Admin::SessionsController:0x00000000030ae8>):
-  
+
 app/controllers/admin/sessions_controller.rb:11:in `create'
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:53:55 +0300
 Processing by Admin::SessionsController#create as */*
@@ -1428,9 +1428,9 @@ Processing by Admin::SessionsController#create as */*
 Completed 400 Bad Request in 1ms (Allocations: 262)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: user):
-  
+
 app/controllers/admin/sessions_controller.rb:57:in `user_params'
 app/controllers/admin/sessions_controller.rb:11:in `create'
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:58:18 +0300
@@ -1443,13 +1443,13 @@ Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 7.0ms | Allocations: 1627
 
 
 Started POST "/admin/singout" for 127.0.0.1 at 2022-10-25 10:59:14 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/admin/singout"):
-  
+
 Started POST "/admin/singout" for 127.0.0.1 at 2022-10-25 10:59:27 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/admin/singout"):
-  
+
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 10:59:47 +0300
 Processing by Admin::SessionsController#create as */*
   Parameters: {"password"=>"[FILTERED]", "email"=>"rick@gmail.com", "session"=>{"password"=>"[FILTERED]", "email"=>"rick@gmail.com"}}
@@ -1465,10 +1465,10 @@ Processing by Users::Devise::SessionsController#create as */*
 Completed 500 Internal Server Error in 24ms (Allocations: 2605)
 
 
-  
+
 NameError (undefined local variable or method `user_params' for #<Users::Devise::SessionsController:0x00000000045c18>
 Did you mean?  user_password_path):
-  
+
 app/controllers/users/devise/sessions_controller.rb:19:in `create'
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 11:01:50 +0300
 Processing by Users::Devise::SessionsController#create as */*
@@ -1645,17 +1645,17 @@ Completed 200 OK in 387ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 208
 
 
 Started POST "/admin/logout" for 127.0.0.1 at 2022-10-25 11:13:49 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/admin/logout"):
-  
+
 Started DELETE "/admin/logout" for 127.0.0.1 at 2022-10-25 11:14:00 +0300
-  
+
 ActionController::RoutingError (No route matches [DELETE] "/admin/logout"):
-  
+
 Started DELETE "/users/logout" for 127.0.0.1 at 2022-10-25 11:14:11 +0300
-  
+
 ActionController::RoutingError (No route matches [DELETE] "/users/logout"):
-  
+
 Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-25 11:15:09 +0300
 Processing by Users::Devise::SessionsController#destroy as */*
   Parameters: {"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"leroythomas1@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -1688,13 +1688,13 @@ Completed 200 OK in 403ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 169
 
 
 Started POST "/users/signout" for 127.0.0.1 at 2022-10-25 11:17:55 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/users/signout"):
-  
+
 Started POST "/users/logout" for 127.0.0.1 at 2022-10-25 11:18:03 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/users/logout"):
-  
+
 Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-25 11:18:15 +0300
 Processing by Users::Devise::SessionsController#destroy as */*
   Parameters: {"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"markbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -1714,9 +1714,9 @@ Completed 200 OK in 463ms (Views: 0.2ms | ActiveRecord: 109.1ms | Allocations: 4
 
 
 Started POST "/admin/signin" for 127.0.0.1 at 2022-10-25 11:18:59 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/admin/signin"):
-  
+
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 11:19:06 +0300
 Processing by Admin::SessionsController#create as */*
   Parameters: {"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"ianngila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -1736,9 +1736,9 @@ Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 2219)
 
 
 Started POST "/admin/signin" for 127.0.0.1 at 2022-10-25 11:25:10 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/admin/signin"):
-  
+
 Started POST "/admin/signup" for 127.0.0.1 at 2022-10-25 11:25:19 +0300
 Processing by Admin::RegistrationsController#create as */*
   Parameters: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -1751,9 +1751,9 @@ Completed 200 OK in 586ms (Views: 0.2ms | ActiveRecord: 161.7ms | Allocations: 4
 
 
 Started POST "/users/signin" for 127.0.0.1 at 2022-10-25 11:25:37 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/users/signin"):
-  
+
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 11:26:03 +0300
 Processing by Users::Devise::SessionsController#create as */*
   Parameters: {"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"jess@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -1831,9 +1831,9 @@ Completed 200 OK in 4796ms (Views: 0.2ms | ActiveRecord: 4091.5ms | Allocations:
 
 
 Started POST "/users/signin" for 127.0.0.1 at 2022-10-25 12:15:34 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/users/signin"):
-  
+
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 12:15:42 +0300
 Processing by Users::Devise::SessionsController#create as */*
   Parameters: {"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"testuser@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -1870,9 +1870,9 @@ Completed 200 OK in 374ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 215
 
 
 Started POST "/admin/signout" for 127.0.0.1 at 2022-10-25 12:16:38 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/admin/signout"):
-  
+
 Started DELETE "/admin/signout" for 127.0.0.1 at 2022-10-25 12:16:45 +0300
 Processing by Admin::SessionsController#destroy as */*
   Parameters: {"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"testadmin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -1913,17 +1913,17 @@ Migrating to DeviseCreateManagers (20221025100727)
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Started POST "/manager/signup" for 127.0.0.1 at 2022-10-25 14:16:24 +0300
   [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (No route matches [POST] "/manager/signup"):
-  
+
 Started POST "/manager/signup" for 127.0.0.1 at 2022-10-25 14:18:37 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/manager/signup"):
-  
+
 Started POST "/managers/signup" for 127.0.0.1 at 2022-10-25 14:18:59 +0300
-  
+
 ActionController::RoutingError (uninitialized constant #<Class:0x00007f5730286930>::RegistrationsController):
-  
+
 Started POST "/admin/login" for 127.0.0.1 at 2022-10-25 14:22:33 +0300
 Processing by Admin::SessionsController#create as */*
   Parameters: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -1945,33 +1945,33 @@ Completed 200 OK in 349ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 239
 
 Started POST "/managers/login" for 127.0.0.1 at 2022-10-25 14:30:48 +0300
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (uninitialized constant #<Class:0x00007f263c2f8b18>::SessionsController):
-  
+
 Started POST "/managers/signup" for 127.0.0.1 at 2022-10-25 14:31:02 +0300
-  
+
 ActionController::RoutingError (uninitialized constant #<Class:0x00007f263c2f8b18>::RegistrationsController):
-  
+
 Started POST "/managers/signup" for 127.0.0.1 at 2022-10-25 14:31:07 +0300
-  
+
 ActionController::RoutingError (uninitialized constant #<Class:0x00007f263c2f8b18>::RegistrationsController):
-  
+
 Started POST "/managers/signup" for 127.0.0.1 at 2022-10-25 14:32:07 +0300
-  
+
 ActionController::RoutingError (uninitialized constant Manager (call 'Manager.connection' to establish a connection)::RegistrationsController):
-  
+
 Started POST "/managers/signup" for 127.0.0.1 at 2022-10-25 14:33:36 +0300
-  
+
 ActionController::RoutingError (uninitialized constant Manager (call 'Manager.connection' to establish a connection)::RegistrationsController):
-  
+
 Started POST "/managers/signup" for 127.0.0.1 at 2022-10-25 14:33:45 +0300
-  
+
 ActionController::RoutingError (uninitialized constant Manager (call 'Manager.connection' to establish a connection)::RegistrationsController):
-  
+
 Started POST "/managers/signup" for 127.0.0.1 at 2022-10-25 14:35:26 +0300
-  
+
 ActionController::RoutingError (uninitialized constant Manager (call 'Manager.connection' to establish a connection)::RegistrationsController):
-  
+
   [1m[36mManager Load (0.8ms)[0m  [1m[34mSELECT "managers".* FROM "managers"[0m
 Started POST "/managers/signup" for 127.0.0.1 at 2022-10-25 14:37:31 +0300
 Processing by Managers::RegistrationsController#create as */*
@@ -2088,9 +2088,9 @@ Processing by PatientsController#show as */*
 Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 504)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=1):
-  
+
 app/controllers/patients_controller.rb:44:in `set_patient'
 Started GET "/patients/" for 127.0.0.1 at 2022-10-25 15:58:26 +0300
 Processing by PatientsController#index as */*
@@ -2125,13 +2125,13 @@ Completed 201 Created in 88ms (Views: 6.2ms | ActiveRecord: 70.4ms | Allocations
 
 
 Started POST "/signup" for 127.0.0.1 at 2022-10-25 22:10:48 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/signup"):
-  
+
 Started POST "/login" for 127.0.0.1 at 2022-10-25 22:11:43 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/login"):
-  
+
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 22:12:42 +0300
 Processing by Users::Devise::SessionsController#create as */*
   Parameters: {"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"leroythomas051@gmal.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -2167,9 +2167,9 @@ Completed 200 OK in 531ms (Views: 0.1ms | ActiveRecord: 106.0ms | Allocations: 6
 
 
 Started POST "/signup" for 127.0.0.1 at 2022-10-25 22:14:16 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/signup"):
-  
+
 Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-25 22:14:40 +0300
 Processing by Users::Devise::SessionsController#destroy as */*
 Filter chain halted as :verify_signed_out_user rendered or redirected
@@ -2177,13 +2177,13 @@ Completed 401 Unauthorized in 121ms (Views: 0.6ms | ActiveRecord: 0.0ms | Alloca
 
 
 Started POST "/users/signin" for 127.0.0.1 at 2022-10-25 22:15:37 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/users/signin"):
-  
+
 Started POST "/users/signin" for 127.0.0.1 at 2022-10-25 22:16:04 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/users/signin"):
-  
+
 Started POST "/users/login" for 127.0.0.1 at 2022-10-25 22:16:16 +0300
 Processing by Users::Devise::SessionsController#create as */*
   Parameters: {"email"=>"leroythomas052@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"leroythomas052@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -2285,9 +2285,9 @@ Completed 200 OK in 320ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 109
 
 
 Started GET "/main.fb21674508e6f345e0b1.hot-update.json" for 127.0.0.1 at 2022-10-25 22:39:04 +0300
-  
+
 ActionController::RoutingError (No route matches [GET] "/main.fb21674508e6f345e0b1.hot-update.json"):
-  
+
 Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-26 01:31:12 +0300
 Processing by Users::Devise::SessionsController#destroy as */*
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
@@ -2349,9 +2349,9 @@ Completed 200 OK in 1048ms (Views: 361.0ms | ActiveRecord: 2.2ms | Allocations: 
 
 
 Started GET "/users" for 127.0.0.1 at 2022-10-26 09:36:59 +0300
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
-  
+
 actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
 actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
 actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
@@ -2413,13 +2413,13 @@ Completed 200 OK in 213ms (Views: 167.4ms | ActiveRecord: 36.9ms | Allocations: 
 
 
 Started POST "/admin" for 127.0.0.1 at 2022-10-26 10:04:26 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/admin"):
-  
+
 Started POST "/admins" for 127.0.0.1 at 2022-10-26 10:04:34 +0300
-  
+
 ActionController::RoutingError (No route matches [POST] "/admins"):
-  
+
 Started POST "/admin/signup" for 127.0.0.1 at 2022-10-26 10:05:08 +0300
 Processing by Admin::RegistrationsController#create as */*
   Parameters: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
@@ -2441,9 +2441,9 @@ Completed 200 OK in 22ms (Views: 4.5ms | ActiveRecord: 0.6ms | Allocations: 6557
 
 
 Started DELETE "/users/5" for 127.0.0.1 at 2022-10-26 10:05:44 +0300
-  
+
 AbstractController::ActionNotFound (The action 'destroy' could not be found for UsersController):
-  
+
 actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
 actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
 actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
@@ -2496,10 +2496,10 @@ puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
 Started DELETE "/users/5" for 127.0.0.1 at 2022-10-26 10:10:40 +0300
-  
+
 SyntaxError (/home/moringa/Projects/group-six/Hospital-System/app/controllers/users_controller.rb:32: unterminated string meets end of file
 /home/moringa/Projects/group-six/Hospital-System/app/controllers/users_controller.rb:32: syntax error, unexpected end-of-input, expecting '}'):
-  
+
 app/controllers/users_controller.rb:32: unterminated string meets end of file
 app/controllers/users_controller.rb:32: syntax error, unexpected end-of-input, expecting '}'
 app/controllers/users_controller.rb:32: unterminated string meets end of file
@@ -2520,9 +2520,9 @@ Completed 204 No Content in 189ms (Views: 0.3ms | ActiveRecord: 146.5ms | Alloca
 
 
 Started GET "/users/5" for 127.0.0.1 at 2022-10-26 10:11:25 +0300
-  
+
 AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
-  
+
 actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
 actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
 actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
@@ -2614,9 +2614,9 @@ Completed 200 OK in 11ms (Views: 5.4ms | ActiveRecord: 0.9ms | Allocations: 2318
 
 
 Started DELETE "/users" for 127.0.0.1 at 2022-10-26 10:16:33 +0300
-  
+
 ActionController::RoutingError (No route matches [DELETE] "/users"):
-  
+
 Started GET "/users/" for 127.0.0.1 at 2022-10-26 10:16:54 +0300
 Processing by UsersController#index as */*
   Parameters: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"email"=>"galileo@galileo.math"}}
@@ -2794,9 +2794,9 @@ Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1125
 
 
 Started DELETE "/signout" for ::1 at 2022-10-26 14:39:39 +0300
-  
+
 ActionController::RoutingError (No route matches [DELETE] "/signout"):
-  
+
 Started DELETE "/users/signout" for ::1 at 2022-10-26 14:40:59 +0300
 Processing by UsersController#destroy as */*
   Parameters: {"id"=>"signout"}
@@ -8763,9 +8763,9 @@ Completed 401 Unauthorized in 1ms (Allocations: 134)
 
 
 Started POST "/users" for 127.0.0.1 at 2022-10-26 14:58:18 +0300
-  
+
 AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
-  
+
 actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
 actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
 actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
@@ -9187,6 +9187,592 @@ Migrating to CreateLaboratories (20221027184412)
   [1m[36mTRANSACTION (111.6ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-10-28 11:21:16 +0300
   [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sospeter/.rvm/gems/ruby-2.7.4/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sospeter/.rvm/gems/ruby-2.7.4/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.8ms | Allocations: 665)
+Completed 200 OK in 42ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 6405)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 11:21:21 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 416)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-28 11:22:29 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"username"=>"json", "email"=>"jsonserver@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"username"=>"json", "email"=>"jsonserver@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f8c58bc3d60>, params: {"username"=>"json", "email"=>"jsonserver@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"username"=>"json", "email"=>"jsonserver@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jsonserver@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 432ms (Views: 0.6ms | ActiveRecord: 2.5ms | Allocations: 33619)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-28 12:03:56 +0300
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:93:in `execute_if_updated'
+activerecord (7.0.4) lib/active_record/migration.rb:599:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 12:04:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 12:04:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 12:04:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 12:04:09 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 12:04:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 12:04:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 12:04:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 12:05:35 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-10-28 12:05:35 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221028085417_create_pharmacies.rb
+
+
+):
+
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePharmacies (20221028085417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "pharmacies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "ticket_id" integer, "remarks" varchar, "inventory_item" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221028085417"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]

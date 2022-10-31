@@ -9174,3 +9174,1166 @@ Filter chain halted as :verify_signed_out_user rendered or redirected
 Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 239)
 
 
+Started POST "/manager/signin" for 127.0.0.1 at 2022-10-27 14:17:48 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/manager/signin"):
+  
+Started POST "/managers/signin" for 127.0.0.1 at 2022-10-27 14:17:58 +0300
+Processing by Managers::SessionsController#create as */*
+  Parameters: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Managers::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4d01a80>, params: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"managers/sessions", "action"=>"create", "session"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mManager Load (0.3ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."email" = ? LIMIT ?[0m  [["email", "galileo@galileo.math"], ["LIMIT", 1]]
+  ↳ app/controllers/managers/sessions_controller.rb:8:in `create'
+Completed 200 OK in 233ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 16912)
+
+
+Started POST "/managers/signup" for 127.0.0.1 at 2022-10-27 14:18:06 +0300
+Processing by Managers::RegistrationsController#create as */*
+  Parameters: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Managers::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f84e40d3458>, params: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"managers/registrations", "action"=>"create", "registration"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mManager Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "managers" WHERE "managers"."email" = ? LIMIT ?[0m  [["email", "galileo@galileo.math"], ["LIMIT", 1]]
+  [1m[36mManager Create (1.2ms)[0m  [1m[32mINSERT INTO "managers" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "galileo@galileo.math"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-10-27 11:18:07.456233"], ["updated_at", "2022-10-27 11:18:07.456233"]]
+  [1m[36mTRANSACTION (130.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 695ms (Views: 0.2ms | ActiveRecord: 132.2ms | Allocations: 20545)
+
+
+Started POST "/managers/signin" for 127.0.0.1 at 2022-10-27 14:18:19 +0300
+Processing by Managers::SessionsController#create as */*
+  Parameters: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Managers::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4f37b38>, params: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"managers/sessions", "action"=>"create", "session"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mManager Load (0.4ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."email" = ? LIMIT ?[0m  [["email", "galileo@galileo.math"], ["LIMIT", 1]]
+  ↳ app/controllers/managers/sessions_controller.rb:8:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Managers::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4f37b38>, params: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"managers/sessions", "action"=>"create", "session"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+Completed 200 OK in 316ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1154)
+
+
+Started GET "/managers/patients" for 127.0.0.1 at 2022-10-27 14:21:29 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/managers/patients"):
+  
+Started GET "/patients" for 127.0.0.1 at 2022-10-27 14:21:41 +0300
+Processing by PatientsController#index as */*
+  Parameters: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "patient"=>{"email"=>"galileo@galileo.math"}}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 1.3ms | Allocations: 18292)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:10 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4b58fd0>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 0.0ms | Allocations: 4230)
+
+
+  
+NameError (Rails couldn't find a valid model for Doctor association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.):
+  
+app/controllers/patients_controller.rb:20:in `create'
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:11 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4534758>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 609)
+
+
+  
+NameError (Rails couldn't find a valid model for Doctor association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.):
+  
+app/controllers/patients_controller.rb:20:in `create'
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:48 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4a535b8>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.9ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:48.490758"], ["updated_at", "2022-10-27 11:22:48.490758"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (164.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 228ms (Views: 34.0ms | ActiveRecord: 167.1ms | Allocations: 5110)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:49 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f477a5d0>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.5ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:49.685389"], ["updated_at", "2022-10-27 11:22:49.685389"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (89.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 98ms (Views: 1.0ms | ActiveRecord: 89.8ms | Allocations: 2134)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:50 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055d3926b39b8>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (5.5ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:50.645534"], ["updated_at", "2022-10-27 11:22:50.645534"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (129.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 174ms (Views: 0.8ms | ActiveRecord: 135.3ms | Allocations: 2139)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:51 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055d392007ee8>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.7ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:51.374056"], ["updated_at", "2022-10-27 11:22:51.374056"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (112.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 147ms (Views: 0.8ms | ActiveRecord: 114.7ms | Allocations: 2129)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:52 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055d390e8c178>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.3ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:52.255307"], ["updated_at", "2022-10-27 11:22:52.255307"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (313.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 341ms (Views: 0.8ms | ActiveRecord: 314.8ms | Allocations: 2129)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:53 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f45ba4c0>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.3ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:53.158782"], ["updated_at", "2022-10-27 11:22:53.158782"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (258.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 295ms (Views: 0.7ms | ActiveRecord: 259.7ms | Allocations: 2134)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:54 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4535388>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (2.7ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:54.137698"], ["updated_at", "2022-10-27 11:22:54.137698"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (120.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 150ms (Views: 1.2ms | ActiveRecord: 123.7ms | Allocations: 2130)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:55 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055d392248540>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.5ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:55.091626"], ["updated_at", "2022-10-27 11:22:55.091626"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (95.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 107ms (Views: 1.0ms | ActiveRecord: 96.1ms | Allocations: 2132)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:55 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055d390b7db08>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.4ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:55.910757"], ["updated_at", "2022-10-27 11:22:55.910757"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (192.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 214ms (Views: 0.7ms | ActiveRecord: 194.5ms | Allocations: 2129)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:56 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84e4144450>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.5ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:56.767738"], ["updated_at", "2022-10-27 11:22:56.767738"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (118.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 128ms (Views: 0.5ms | ActiveRecord: 119.4ms | Allocations: 2130)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:57 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84e4098880>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.8ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:57.600124"], ["updated_at", "2022-10-27 11:22:57.600124"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (111.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 128ms (Views: 0.7ms | ActiveRecord: 112.7ms | Allocations: 2129)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:58 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84e4024958>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (9.4ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:58.525609"], ["updated_at", "2022-10-27 11:22:58.525609"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (104.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 136ms (Views: 0.9ms | ActiveRecord: 114.4ms | Allocations: 2129)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:22:59 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4f75410>, params: {"name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (3.7ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:22:59.885669"], ["updated_at", "2022-10-27 11:22:59.885669"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (108.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 123ms (Views: 0.9ms | ActiveRecord: 112.2ms | Allocations: 2129)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:23:55 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055d392ee9fb0>, params: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.9ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "12345678"], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:23:55.871154"], ["updated_at", "2022-10-27 11:23:55.871154"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (100.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 113ms (Views: 0.7ms | ActiveRecord: 101.3ms | Allocations: 2150)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:23:57 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055d392eae258>, params: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.6ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "12345678"], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:23:57.057404"], ["updated_at", "2022-10-27 11:23:57.057404"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (101.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 112ms (Views: 0.7ms | ActiveRecord: 102.1ms | Allocations: 2149)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:23:57 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055d392e5e640>, params: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.8ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "12345678"], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:23:57.461373"], ["updated_at", "2022-10-27 11:23:57.461373"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (140.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 160ms (Views: 0.8ms | ActiveRecord: 142.3ms | Allocations: 2150)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:23:58 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4f1c7c0>, params: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.6ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "12345678"], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:23:58.409905"], ["updated_at", "2022-10-27 11:23:58.409905"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (98.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 128ms (Views: 1.7ms | ActiveRecord: 100.5ms | Allocations: 2149)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:23:59 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4e42b10>, params: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (2.4ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "12345678"], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:23:59.440628"], ["updated_at", "2022-10-27 11:23:59.440628"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (81.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 115ms (Views: 0.8ms | ActiveRecord: 84.5ms | Allocations: 2149)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:24:00 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4dd7720>, params: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (3.6ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "12345678"], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:24:00.246671"], ["updated_at", "2022-10-27 11:24:00.246671"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (115.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 145ms (Views: 0.8ms | ActiveRecord: 119.2ms | Allocations: 2150)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:24:01 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4d50220>, params: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.9ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "12345678"], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:24:01.125187"], ["updated_at", "2022-10-27 11:24:01.125187"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (88.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 103ms (Views: 1.1ms | ActiveRecord: 89.5ms | Allocations: 2152)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-27 14:24:01 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}}
+[31mUnpermitted parameters: :name, :gurdian, :doctor_id, :doctor_remarks, :laboratory_comments, :doctors_prescription, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4cb1670>, params: {"ticket_no"=>"12345678", "name"=>"test patient", "reg_date"=>"2022-05-09T09:30:43.839Z", "gender"=>"male", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gurdian"=>"Ian Ngila", "patient_status"=>"cleared", "doctor_id"=>"1", "doctor_remarks"=>"lorem ipsum dolor amet", "laboratory_comments"=>"lorem ipsum dolor amet", "doctors_prescription"=>"lorem ipsum", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"12345678", "reg_date"=>"2022-05-09T09:30:43.839Z", "contact_no"=>"12345678", "email"=>"testpatient@test.com", "gender"=>"male", "patient_status"=>"cleared"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.2ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "12345678"], ["patient_no", nil], ["reg_date", "2022-05-09T09:30:43.839Z"], ["address", nil], ["dob", nil], ["contact_no", "12345678"], ["email", "testpatient@test.com"], ["guardian", nil], ["relation", nil], ["gender", "male"], ["patient_status", "cleared"], ["created_at", "2022-10-27 11:24:01.962386"], ["updated_at", "2022-10-27 11:24:01.962386"]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (84.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 97ms (Views: 0.7ms | ActiveRecord: 85.9ms | Allocations: 2149)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 14:33:30 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 3.3ms | Allocations: 5103)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 14:36:03 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.3ms | Allocations: 4899)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 14:36:07 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.3ms | Allocations: 4899)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 14:36:58 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (2.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 2.0ms | Allocations: 4902)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 14:39:53 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (1.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 83ms (Views: 80.0ms | ActiveRecord: 1.7ms | Allocations: 4899)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 14:42:21 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (3.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 65ms (Views: 61.3ms | ActiveRecord: 3.5ms | Allocations: 4899)
+
+
+Started POST "/users/signup" for ::1 at 2022-10-27 14:43:49 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"username"=>"alan", "email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"username"=>"alan", "email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f84f42e2c98>, params: {"username"=>"alan", "email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"username"=>"alan", "email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alanmauko@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 912ms (Views: 0.8ms | ActiveRecord: 6.6ms | Allocations: 25318)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-27 14:44:38 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4b58080>, params: {"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"galileo@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "galileo@galileo.math"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 306ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3883)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-27 14:44:53 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4875340>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alan@galileo.math"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 335ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3388)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-27 14:45:24 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4d0dba0>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alan@galileo.math"], ["LIMIT", 1]]
+  [1m[36mUser Create (22.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alan@galileo.math"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["created_at", "2022-10-27 11:45:34.712952"], ["updated_at", "2022-10-27 11:45:34.712952"]]
+  [1m[36mTRANSACTION (102.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 3460ms (Views: 0.5ms | ActiveRecord: 129.6ms | Allocations: 10921)
+
+
+Started POST "/users/signup" for ::1 at 2022-10-27 14:45:43 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"username"=>"alan", "email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"username"=>"alan", "email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f84e4133ad8>, params: {"username"=>"alan", "email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"username"=>"alan", "email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alanmauko@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alanmauko@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["created_at", "2022-10-27 11:45:43.503506"], ["updated_at", "2022-10-27 11:45:43.503506"]]
+  [1m[36mTRANSACTION (105.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 485ms (Views: 0.1ms | ActiveRecord: 106.4ms | Allocations: 4098)
+
+
+Started POST "/users/signin" for ::1 at 2022-10-27 14:46:30 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84e4050f80>, params: {"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alanmauko@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84e4050f80>, params: {"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]"}} }[0m
+Completed 200 OK in 379ms (Views: 1.1ms | ActiveRecord: 0.7ms | Allocations: 1473)
+
+
+Started DELETE "/users/signout" for ::1 at 2022-10-27 14:47:15 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 401 Unauthorized in 12ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 260)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 14:49:31 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 98ms (Views: 74.9ms | ActiveRecord: 1.4ms | Allocations: 8610)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 15:21:29 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (67.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 1259ms (Views: 1258.1ms | ActiveRecord: 262.8ms | Allocations: 5080)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 15:22:18 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.5ms | Allocations: 4899)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-27 15:30:27 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4d33a58>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alan@galileo.math"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 642ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 3494)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 16:13:30 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 156ms (Views: 152.7ms | ActiveRecord: 1.3ms | Allocations: 5075)
+
+
+Started GET "/patients" for ::1 at 2022-10-27 16:13:34 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 172ms (Views: 169.9ms | ActiveRecord: 0.4ms | Allocations: 4899)
+
+
+Started GET "/" for ::1 at 2022-10-28 07:31:50 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 121.1ms | Allocations: 665)
+Completed 200 OK in 1758ms (Views: 550.9ms | Allocations: 6399)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-28 07:40:02 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"username"=>"Ombiji", "email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"username"=>"Ombiji", "email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x000055d391101908>, params: {"username"=>"Ombiji", "email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"username"=>"Ombiji", "email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ombiji@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (18.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ombiji@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["created_at", "2022-10-28 04:40:03.565356"], ["updated_at", "2022-10-28 04:40:03.565356"]]
+  [1m[36mTRANSACTION (109.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 1224ms (Views: 0.2ms | ActiveRecord: 214.2ms | Allocations: 8873)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 07:40:33 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d393099fe0>, params: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ombiji@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d393099fe0>, params: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 398ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 2416)
+
+
+Started DELETE "/users/signout" for ::1 at 2022-10-28 07:40:52 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 245)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 07:42:58 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d392ed0808>, params: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ombiji@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d392ed0808>, params: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 422ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 1685)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 07:43:36 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? ORDER BY "managers"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 231ms (Views: 0.2ms | ActiveRecord: 8.1ms | Allocations: 6314)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 07:43:56 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d392e2fe58>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alan@galileo.math"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d392e2fe58>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 386ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 1705)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 07:44:03 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1425)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 07:44:47 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 07:49:09 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4e03f28>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alan@galileo.math"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4e03f28>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]"}} }[0m
+Completed 200 OK in 401ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1104)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 07:49:19 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4db92e8>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alan@galileo.math"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4db92e8>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 403ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 1686)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 07:49:27 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1415)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 07:57:37 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4c8be48>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alan@galileo.math"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4c8be48>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+Completed 200 OK in 450ms (Views: 0.7ms | ActiveRecord: 83.5ms | Allocations: 1323)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 07:57:40 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d392d4fc68>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alan@galileo.math"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d392d4fc68>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 402ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 1795)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 07:57:44 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4bad648>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alan@galileo.math"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameters: :password_confirmation, :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f4bad648>, params: {"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alan@galileo.math", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 404ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1708)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 07:59:02 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d392bef008>, params: {"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alanmauko@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x000055d392bef008>, params: {"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alanmauko@gmail.com", "password"=>"[FILTERED]"}} }[0m
+Completed 200 OK in 396ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1092)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-28 09:54:25 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"username"=>"monica", "email"=>"monie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"username"=>"monica", "email"=>"monie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f84f48396d8>, params: {"username"=>"monica", "email"=>"monie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"username"=>"monica", "email"=>"monie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "monie@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (35.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "monie@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["created_at", "2022-10-28 06:54:26.899455"], ["updated_at", "2022-10-28 06:54:26.899455"]]
+  [1m[36mTRANSACTION (59.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (10.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 1196ms (Views: 0.2ms | ActiveRecord: 186.4ms | Allocations: 5258)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 09:55:01 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"monie@gmail.coma", "password"=>"[FILTERED]", "session"=>{"email"=>"monie@gmail.coma", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f84f46eab88>, params: {"email"=>"monie@gmail.coma", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"monie@gmail.coma", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "monie@gmail.coma"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 3.5ms | Allocations: 724)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 09:55:29 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 1401)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 11:30:46 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (19.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 474ms (Views: 209.4ms | ActiveRecord: 22.4ms | Allocations: 37234)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 11:34:24 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.4ms | Allocations: 4915)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 11:36:50 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.3ms | Allocations: 4915)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 11:37:18 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.4ms | Allocations: 4915)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 11:37:21 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 75ms (Views: 74.2ms | ActiveRecord: 0.4ms | Allocations: 4899)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 11:37:22 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.4ms | Allocations: 4915)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 13:04:53 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (49.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 8745ms (Views: 8366.2ms | ActiveRecord: 223.1ms | Allocations: 5095)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 13:06:57 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 1172ms (Views: 1169.6ms | ActiveRecord: 0.9ms | Allocations: 4903)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 13:18:01 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (6.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 276ms (Views: 263.6ms | ActiveRecord: 24.7ms | Allocations: 5077)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-28 13:22:12 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 613ms (Views: 512.8ms | ActiveRecord: 0.3ms | Allocations: 4900)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 13:28:00 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 401 Unauthorized in 1236ms (Views: 1.4ms | Allocations: 472)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 13:28:32 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 401 Unauthorized in 11ms (Views: 0.3ms | Allocations: 320)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-28 13:29:10 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5ab00a3e28>, params: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (222.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ombiji@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f5ab00a3e28>, params: {"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"ombiji@gmail.com", "password"=>"[FILTERED]"}} }[0m
+Completed 200 OK in 8172ms (Views: 0.9ms | ActiveRecord: 285.2ms | Allocations: 23754)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-28 13:29:53 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 499ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3124)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 15:44:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (19.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 720ms (Views: 279.9ms | ActiveRecord: 25.2ms | Allocations: 37235)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 15:45:12 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 4915)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 16:01:04 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (16.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 265ms (Views: 264.3ms | ActiveRecord: 191.8ms | Allocations: 5092)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 16:01:53 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.5ms | Allocations: 4915)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 16:04:38 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.6ms | Allocations: 4899)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 16:06:31 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (1.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 113ms (Views: 110.8ms | ActiveRecord: 1.2ms | Allocations: 4900)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 16:08:30 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 68ms (Views: 66.5ms | ActiveRecord: 0.6ms | Allocations: 4899)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 16:12:47 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (98.8ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 151ms (Views: 51.2ms | ActiveRecord: 98.8ms | Allocations: 4915)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPatientNameToPatients (20221030132229)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (42.6ms)[0m  [1m[35mALTER TABLE "patients" ADD "name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221030132229"]]
+  [1m[36mTRANSACTION (147.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 17:01:29 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (1.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 148ms (Views: 118.7ms | ActiveRecord: 1.6ms | Allocations: 8411)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 17:30:10 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 973ms (Views: 972.1ms | ActiveRecord: 268.2ms | Allocations: 5392)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 17:30:32 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (52.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 208ms (Views: 154.4ms | ActiveRecord: 52.3ms | Allocations: 5211)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 17:30:46 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.4ms | Allocations: 5211)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 17:31:04 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.3ms | Allocations: 5211)
+
+
+Started DELETE "/patientsundefined" for 127.0.0.1 at 2022-10-30 17:45:37 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/patientsundefined"):
+  
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-30 17:56:24 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 401 Unauthorized in 2375ms (Views: 20.7ms | Allocations: 379)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-30 18:18:29 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (19.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 662ms (Views: 137.4ms | ActiveRecord: 25.1ms | Allocations: 37831)
+
+
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-30 18:19:48 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 57ms (ActiveRecord: 0.4ms | Allocations: 2090)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started GET "/patients" for 127.0.0.1 at 2022-10-31 07:56:32 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (11.9ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 278ms (Views: 109.8ms | ActiveRecord: 12.9ms | Allocations: 37833)
+
+
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 07:56:47 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 90ms (ActiveRecord: 0.3ms | Allocations: 1223)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 07:56:51 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.6ms | Allocations: 510)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started GET "/patients" for 127.0.0.1 at 2022-10-31 07:57:58 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.6ms | Allocations: 5034)
+
+
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 08:11:47 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms | Allocations: 679)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started GET "/patients" for 127.0.0.1 at 2022-10-31 08:56:54 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 253ms (Views: 251.6ms | ActiveRecord: 85.0ms | Allocations: 5201)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-31 09:02:38 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.4ms | Allocations: 5035)
+
+
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:04:47 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (11.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 13ms (ActiveRecord: 11.2ms | Allocations: 564)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:04:48 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms | Allocations: 498)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:04:49 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms | Allocations: 498)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:04:53 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.5ms | Allocations: 498)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:11:35 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 153ms (ActiveRecord: 123.4ms | Allocations: 678)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:11:36 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 498)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started GET "/patients" for 127.0.0.1 at 2022-10-31 09:12:33 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 17.7ms | ActiveRecord: 0.7ms | Allocations: 5083)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-31 09:12:33 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.4ms | Allocations: 5019)
+
+
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:12:49 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms | Allocations: 499)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started DELETE "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:12:50 +0300
+Processing by PatientsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms | Allocations: 499)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started GET "/patients" for 127.0.0.1 at 2022-10-31 09:17:10 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.7ms | Allocations: 5018)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-31 09:17:49 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 41ms (Views: 36.4ms | ActiveRecord: 0.4ms | Allocations: 5023)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-10-31 09:19:12 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"username"=>"alano", "email"=>"alano@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"username"=>"alano", "email"=>"alano@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00005600688ba808>, params: {"username"=>"alano", "email"=>"alano@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"username"=>"alano", "email"=>"alano@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (188.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alano@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (38.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alano@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["created_at", "2022-10-31 06:19:15.574176"], ["updated_at", "2022-10-31 06:19:15.574176"]]
+  [1m[36mTRANSACTION (116.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 1290ms (Views: 0.2ms | ActiveRecord: 356.0ms | Allocations: 25701)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-10-31 09:20:15 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"alano@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"alano@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f1098f07a58>, params: {"email"=>"alano@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alano@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alano@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f1098f07a58>, params: {"email"=>"alano@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"alano@gmail.com", "password"=>"[FILTERED]"}} }[0m
+Completed 200 OK in 454ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 1491)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-31 09:20:40 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 200 OK in 160ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 2230)
+
+
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-10-31 09:21:07 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-10-31 09:51:03 +0300
+Started GET "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:51:03 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 141ms (Views: 140.1ms | ActiveRecord: 19.3ms | Allocations: 5450)
+
+
+Processing by PatientsController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 17ms (ActiveRecord: 0.9ms | Allocations: 875)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'
+Started GET "/patients/undefined" for 127.0.0.1 at 2022-10-31 09:51:07 +0300
+Processing by PatientsController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:44:in `set_patient'
+Completed 404 Not Found in 21ms (ActiveRecord: 0.2ms | Allocations: 498)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=undefined):
+  
+app/controllers/patients_controller.rb:44:in `set_patient'

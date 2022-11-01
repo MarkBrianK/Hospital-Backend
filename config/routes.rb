@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :doctors, path: 'doctors', path_names:{
+    sign_in: 'signin',
+    sign_out: 'signout',
+    registration: 'signup'
+  }, controllers:{
+    sessions: 'doctors/sessions',
+    password: 'doctors/passwords',
+    registrations:'doctors/registrations'
+  }
   resources :patients
   # resources :users
+  resources :managers
 
   devise_for :managers, path: 'managers', path_names:{
     sign_in: 'signin',

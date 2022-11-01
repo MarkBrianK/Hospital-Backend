@@ -9776,3 +9776,998 @@ Migrating to CreatePharmacies (20221028085417)
   [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-10-31 16:16:32 +0300
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 9 pending migrations:
+
+20221024131614_devise_create_users.rb
+20221024132055_devise_create_admins.rb
+20221025100727_devise_create_managers.rb
+20221025114421_create_patients.rb
+20221027184009_create_tickets.rb
+20221027184412_create_laboratories.rb
+20221028085417_create_pharmacies.rb
+20221030132229_add_patient_name_to_patients.rb
+20221031060900_create_staffs.rb
+
+
+):
+  
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/patients" for 127.0.0.1 at 2022-10-31 16:16:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 9 pending migrations:
+
+20221024131614_devise_create_users.rb
+20221024132055_devise_create_admins.rb
+20221025100727_devise_create_managers.rb
+20221025114421_create_patients.rb
+20221027184009_create_tickets.rb
+20221027184412_create_laboratories.rb
+20221028085417_create_pharmacies.rb
+20221030132229_add_patient_name_to_patients.rb
+20221031060900_create_staffs.rb
+
+
+):
+  
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221024131614)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_unlock_token" ON "users" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024131614"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateAdmins (20221024132055)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_confirmation_token" ON "admins" ("confirmation_token")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_unlock_token" ON "admins" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024132055"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateManagers (20221025100727)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "managers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_email" ON "managers" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_reset_password_token" ON "managers" ("reset_password_token")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_confirmation_token" ON "managers" ("confirmation_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_unlock_token" ON "managers" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221025100727"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePatients (20221025114421)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ticket_no" varchar, "username" varchar, "patient_no" varchar, "reg_date" varchar, "address" varchar, "dob" varchar, "contact_no" varchar, "email" varchar, "guardian" varchar, "relation" varchar, "gender" varchar, "patient_status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221025114421"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTickets (20221027184009)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_name" varchar, "inventory_item" varchar, "item" varchar, "discount" varchar, "total_amount" varchar, "receipt_no" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221027184009"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLaboratories (20221027184412)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "laboratories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "test_name" varchar, "cost_of_test" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221027184412"]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePharmacies (20221028085417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "pharmacies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "ticket_id" integer, "remarks" varchar, "inventory_item" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221028085417"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPatientNameToPatients (20221030132229)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "patients" ADD "name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221030132229"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStaffs (20221031060900)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "staffs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Job_description" varchar, "Contact" integer, "Email" varchar, "Start_time" integer, "End_time" integer, "Status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221031060900"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-31 13:17:56.479890"], ["updated_at", "2022-10-31 13:17:56.479890"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/patients" for 127.0.0.1 at 2022-10-31 16:18:20 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#create as */*
+  Parameters: {"status"=>500, "error"=>"Internal Server Error", "exception"=>"#<ActiveRecord::PendingMigrationError: \n\nMigrations are pending. To resolve this issue, run:\n\n        bin/rails db:migrate RAILS_ENV=development\n\nYou have 9 pending migrations:\n\n20221024131614_devise_create_users.rb\n20221024132055_devise_create_admins.rb\n20221025100727_devise_create_managers.rb\n20221025114421_create_patients.rb\n20221027184009_create_tickets.rb\n20221027184412_create_laboratories.rb\n20221028085417_create_pharmacies.rb\n20221030132229_add_patient_name_to_patients.rb\n20221031060900_create_staffs.rb\n\n\n>", "traces"=>{"Application Trace"=>[], "Framework Trace"=>[{"exception_object_id"=>13280, "id"=>0, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'"}, {"exception_object_id"=>13280, "id"=>1, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'"}, {"exception_object_id"=>13280, "id"=>2, "trace"=>"activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'"}, {"exception_object_id"=>13280, "id"=>3, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'"}, {"exception_object_id"=>13280, "id"=>4, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'"}, {"exception_object_id"=>13280, "id"=>5, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'"}, {"exception_object_id"=>13280, "id"=>6, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'"}, {"exception_object_id"=>13280, "id"=>7, "trace"=>"activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'"}, {"exception_object_id"=>13280, "id"=>8, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>9, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>13280, "id"=>10, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'"}, {"exception_object_id"=>13280, "id"=>11, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'"}, {"exception_object_id"=>13280, "id"=>12, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>13, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'"}, {"exception_object_id"=>13280, "id"=>14, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'"}, {"exception_object_id"=>13280, "id"=>15, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'"}, {"exception_object_id"=>13280, "id"=>16, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'"}, {"exception_object_id"=>13280, "id"=>17, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'"}, {"exception_object_id"=>13280, "id"=>18, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'"}, {"exception_object_id"=>13280, "id"=>19, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'"}, {"exception_object_id"=>13280, "id"=>20, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>21, "trace"=>"rack (2.2.4) lib/rack/runtime.rb:22:in `call'"}, {"exception_object_id"=>13280, "id"=>22, "trace"=>"activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'"}, {"exception_object_id"=>13280, "id"=>23, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'"}, {"exception_object_id"=>13280, "id"=>24, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'"}, {"exception_object_id"=>13280, "id"=>25, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'"}, {"exception_object_id"=>13280, "id"=>26, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>13280, "id"=>27, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'"}, {"exception_object_id"=>13280, "id"=>28, "trace"=>"rack (2.2.4) lib/rack/sendfile.rb:110:in `call'"}, {"exception_object_id"=>13280, "id"=>29, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'"}, {"exception_object_id"=>13280, "id"=>30, "trace"=>"rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'"}, {"exception_object_id"=>13280, "id"=>31, "trace"=>"railties (7.0.4) lib/rails/engine.rb:530:in `call'"}, {"exception_object_id"=>13280, "id"=>32, "trace"=>"puma (5.6.5) lib/puma/configuration.rb:252:in `call'"}, {"exception_object_id"=>13280, "id"=>33, "trace"=>"puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'"}, {"exception_object_id"=>13280, "id"=>34, "trace"=>"puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'"}, {"exception_object_id"=>13280, "id"=>35, "trace"=>"puma (5.6.5) lib/puma/request.rb:76:in `handle_request'"}, {"exception_object_id"=>13280, "id"=>36, "trace"=>"puma (5.6.5) lib/puma/server.rb:443:in `process_client'"}, {"exception_object_id"=>13280, "id"=>37, "trace"=>"puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'"}], "Full Trace"=>[{"exception_object_id"=>13280, "id"=>0, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'"}, {"exception_object_id"=>13280, "id"=>1, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'"}, {"exception_object_id"=>13280, "id"=>2, "trace"=>"activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'"}, {"exception_object_id"=>13280, "id"=>3, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'"}, {"exception_object_id"=>13280, "id"=>4, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'"}, {"exception_object_id"=>13280, "id"=>5, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'"}, {"exception_object_id"=>13280, "id"=>6, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'"}, {"exception_object_id"=>13280, "id"=>7, "trace"=>"activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'"}, {"exception_object_id"=>13280, "id"=>8, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>9, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>13280, "id"=>10, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'"}, {"exception_object_id"=>13280, "id"=>11, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'"}, {"exception_object_id"=>13280, "id"=>12, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>13, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'"}, {"exception_object_id"=>13280, "id"=>14, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'"}, {"exception_object_id"=>13280, "id"=>15, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'"}, {"exception_object_id"=>13280, "id"=>16, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'"}, {"exception_object_id"=>13280, "id"=>17, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'"}, {"exception_object_id"=>13280, "id"=>18, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'"}, {"exception_object_id"=>13280, "id"=>19, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'"}, {"exception_object_id"=>13280, "id"=>20, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>21, "trace"=>"rack (2.2.4) lib/rack/runtime.rb:22:in `call'"}, {"exception_object_id"=>13280, "id"=>22, "trace"=>"activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'"}, {"exception_object_id"=>13280, "id"=>23, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'"}, {"exception_object_id"=>13280, "id"=>24, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'"}, {"exception_object_id"=>13280, "id"=>25, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'"}, {"exception_object_id"=>13280, "id"=>26, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>13280, "id"=>27, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'"}, {"exception_object_id"=>13280, "id"=>28, "trace"=>"rack (2.2.4) lib/rack/sendfile.rb:110:in `call'"}, {"exception_object_id"=>13280, "id"=>29, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'"}, {"exception_object_id"=>13280, "id"=>30, "trace"=>"rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'"}, {"exception_object_id"=>13280, "id"=>31, "trace"=>"railties (7.0.4) lib/rails/engine.rb:530:in `call'"}, {"exception_object_id"=>13280, "id"=>32, "trace"=>"puma (5.6.5) lib/puma/configuration.rb:252:in `call'"}, {"exception_object_id"=>13280, "id"=>33, "trace"=>"puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'"}, {"exception_object_id"=>13280, "id"=>34, "trace"=>"puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'"}, {"exception_object_id"=>13280, "id"=>35, "trace"=>"puma (5.6.5) lib/puma/request.rb:76:in `handle_request'"}, {"exception_object_id"=>13280, "id"=>36, "trace"=>"puma (5.6.5) lib/puma/server.rb:443:in `process_client'"}, {"exception_object_id"=>13280, "id"=>37, "trace"=>"puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'"}]}, "patient"=>{}}
+[31mUnpermitted parameters: :status, :error, :exception, :traces, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007fe5690f27c8>, params: {"status"=>500, "error"=>"Internal Server Error", "exception"=>"#<ActiveRecord::PendingMigrationError: \n\nMigrations are pending. To resolve this issue, run:\n\n        bin/rails db:migrate RAILS_ENV=development\n\nYou have 9 pending migrations:\n\n20221024131614_devise_create_users.rb\n20221024132055_devise_create_admins.rb\n20221025100727_devise_create_managers.rb\n20221025114421_create_patients.rb\n20221027184009_create_tickets.rb\n20221027184412_create_laboratories.rb\n20221028085417_create_pharmacies.rb\n20221030132229_add_patient_name_to_patients.rb\n20221031060900_create_staffs.rb\n\n\n>", "traces"=>{"Application Trace"=>[], "Framework Trace"=>[{"exception_object_id"=>13280, "id"=>0, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'"}, {"exception_object_id"=>13280, "id"=>1, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'"}, {"exception_object_id"=>13280, "id"=>2, "trace"=>"activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'"}, {"exception_object_id"=>13280, "id"=>3, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'"}, {"exception_object_id"=>13280, "id"=>4, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'"}, {"exception_object_id"=>13280, "id"=>5, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'"}, {"exception_object_id"=>13280, "id"=>6, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'"}, {"exception_object_id"=>13280, "id"=>7, "trace"=>"activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'"}, {"exception_object_id"=>13280, "id"=>8, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>9, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>13280, "id"=>10, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'"}, {"exception_object_id"=>13280, "id"=>11, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'"}, {"exception_object_id"=>13280, "id"=>12, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>13, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'"}, {"exception_object_id"=>13280, "id"=>14, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'"}, {"exception_object_id"=>13280, "id"=>15, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'"}, {"exception_object_id"=>13280, "id"=>16, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'"}, {"exception_object_id"=>13280, "id"=>17, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'"}, {"exception_object_id"=>13280, "id"=>18, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'"}, {"exception_object_id"=>13280, "id"=>19, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'"}, {"exception_object_id"=>13280, "id"=>20, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>21, "trace"=>"rack (2.2.4) lib/rack/runtime.rb:22:in `call'"}, {"exception_object_id"=>13280, "id"=>22, "trace"=>"activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'"}, {"exception_object_id"=>13280, "id"=>23, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'"}, {"exception_object_id"=>13280, "id"=>24, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'"}, {"exception_object_id"=>13280, "id"=>25, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'"}, {"exception_object_id"=>13280, "id"=>26, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>13280, "id"=>27, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'"}, {"exception_object_id"=>13280, "id"=>28, "trace"=>"rack (2.2.4) lib/rack/sendfile.rb:110:in `call'"}, {"exception_object_id"=>13280, "id"=>29, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'"}, {"exception_object_id"=>13280, "id"=>30, "trace"=>"rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'"}, {"exception_object_id"=>13280, "id"=>31, "trace"=>"railties (7.0.4) lib/rails/engine.rb:530:in `call'"}, {"exception_object_id"=>13280, "id"=>32, "trace"=>"puma (5.6.5) lib/puma/configuration.rb:252:in `call'"}, {"exception_object_id"=>13280, "id"=>33, "trace"=>"puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'"}, {"exception_object_id"=>13280, "id"=>34, "trace"=>"puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'"}, {"exception_object_id"=>13280, "id"=>35, "trace"=>"puma (5.6.5) lib/puma/request.rb:76:in `handle_request'"}, {"exception_object_id"=>13280, "id"=>36, "trace"=>"puma (5.6.5) lib/puma/server.rb:443:in `process_client'"}, {"exception_object_id"=>13280, "id"=>37, "trace"=>"puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'"}], "Full Trace"=>[{"exception_object_id"=>13280, "id"=>0, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'"}, {"exception_object_id"=>13280, "id"=>1, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'"}, {"exception_object_id"=>13280, "id"=>2, "trace"=>"activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'"}, {"exception_object_id"=>13280, "id"=>3, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'"}, {"exception_object_id"=>13280, "id"=>4, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'"}, {"exception_object_id"=>13280, "id"=>5, "trace"=>"activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'"}, {"exception_object_id"=>13280, "id"=>6, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'"}, {"exception_object_id"=>13280, "id"=>7, "trace"=>"activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'"}, {"exception_object_id"=>13280, "id"=>8, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>9, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>13280, "id"=>10, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'"}, {"exception_object_id"=>13280, "id"=>11, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'"}, {"exception_object_id"=>13280, "id"=>12, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>13, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'"}, {"exception_object_id"=>13280, "id"=>14, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'"}, {"exception_object_id"=>13280, "id"=>15, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'"}, {"exception_object_id"=>13280, "id"=>16, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'"}, {"exception_object_id"=>13280, "id"=>17, "trace"=>"activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'"}, {"exception_object_id"=>13280, "id"=>18, "trace"=>"railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'"}, {"exception_object_id"=>13280, "id"=>19, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'"}, {"exception_object_id"=>13280, "id"=>20, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'"}, {"exception_object_id"=>13280, "id"=>21, "trace"=>"rack (2.2.4) lib/rack/runtime.rb:22:in `call'"}, {"exception_object_id"=>13280, "id"=>22, "trace"=>"activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'"}, {"exception_object_id"=>13280, "id"=>23, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'"}, {"exception_object_id"=>13280, "id"=>24, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'"}, {"exception_object_id"=>13280, "id"=>25, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'"}, {"exception_object_id"=>13280, "id"=>26, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>13280, "id"=>27, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'"}, {"exception_object_id"=>13280, "id"=>28, "trace"=>"rack (2.2.4) lib/rack/sendfile.rb:110:in `call'"}, {"exception_object_id"=>13280, "id"=>29, "trace"=>"actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'"}, {"exception_object_id"=>13280, "id"=>30, "trace"=>"rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'"}, {"exception_object_id"=>13280, "id"=>31, "trace"=>"railties (7.0.4) lib/rails/engine.rb:530:in `call'"}, {"exception_object_id"=>13280, "id"=>32, "trace"=>"puma (5.6.5) lib/puma/configuration.rb:252:in `call'"}, {"exception_object_id"=>13280, "id"=>33, "trace"=>"puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'"}, {"exception_object_id"=>13280, "id"=>34, "trace"=>"puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'"}, {"exception_object_id"=>13280, "id"=>35, "trace"=>"puma (5.6.5) lib/puma/request.rb:76:in `handle_request'"}, {"exception_object_id"=>13280, "id"=>36, "trace"=>"puma (5.6.5) lib/puma/server.rb:443:in `process_client'"}, {"exception_object_id"=>13280, "id"=>37, "trace"=>"puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'"}]}, "controller"=>"patients", "action"=>"create", "patient"=>{}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.6ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["username", nil], ["patient_no", nil], ["reg_date", nil], ["address", nil], ["dob", nil], ["contact_no", nil], ["email", nil], ["guardian", nil], ["relation", nil], ["gender", nil], ["patient_status", nil], ["created_at", "2022-10-31 13:18:20.657938"], ["updated_at", "2022-10-31 13:18:20.657938"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 75ms (Views: 1.1ms | ActiveRecord: 10.1ms | Allocations: 37698)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-31 16:18:23 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>1, "ticket_no"=>nil, "username"=>nil, "patient_no"=>nil, "reg_date"=>nil, "address"=>nil, "dob"=>nil, "contact_no"=>nil, "email"=>nil, "guardian"=>nil, "relation"=>nil, "gender"=>nil, "patient_status"=>nil, "created_at"=>"2022-10-31T13:18:20.657Z", "updated_at"=>"2022-10-31T13:18:20.657Z", "name"=>nil, "patient"=>{"id"=>1, "ticket_no"=>nil, "username"=>nil, "patient_no"=>nil, "reg_date"=>nil, "address"=>nil, "dob"=>nil, "contact_no"=>nil, "email"=>nil, "guardian"=>nil, "relation"=>nil, "gender"=>nil, "patient_status"=>nil, "created_at"=>"2022-10-31T13:18:20.657Z", "updated_at"=>"2022-10-31T13:18:20.657Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055ad620759f8>, params: {"id"=>1, "ticket_no"=>nil, "username"=>nil, "patient_no"=>nil, "reg_date"=>nil, "address"=>nil, "dob"=>nil, "contact_no"=>nil, "email"=>nil, "guardian"=>nil, "relation"=>nil, "gender"=>nil, "patient_status"=>nil, "created_at"=>"2022-10-31T13:18:20.657Z", "updated_at"=>"2022-10-31T13:18:20.657Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>1, "ticket_no"=>nil, "username"=>nil, "patient_no"=>nil, "reg_date"=>nil, "address"=>nil, "dob"=>nil, "contact_no"=>nil, "email"=>nil, "guardian"=>nil, "relation"=>nil, "gender"=>nil, "patient_status"=>nil, "created_at"=>"2022-10-31T13:18:20.657Z", "updated_at"=>"2022-10-31T13:18:20.657Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.4ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", nil], ["username", nil], ["patient_no", nil], ["reg_date", nil], ["address", nil], ["dob", nil], ["contact_no", nil], ["email", nil], ["guardian", nil], ["relation", nil], ["gender", nil], ["patient_status", nil], ["created_at", "2022-10-31 13:18:23.373338"], ["updated_at", "2022-10-31 13:18:23.373338"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 21ms (Views: 1.3ms | ActiveRecord: 10.8ms | Allocations: 2253)
+
+
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-10-31 16:23:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started POST "/patients" for 127.0.0.1 at 2022-10-31 16:23:33 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"0000", "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "patient"=>{"ticket_no"=>"0000", "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>""}}
+[31mUnpermitted parameter: :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007fe568eb0f28>, params: {"ticket_no"=>"0000", "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"0000", "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (3.0ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", "1234"], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-10-04"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Female"], ["patient_status", ""], ["created_at", "2022-10-31 13:23:33.469989"], ["updated_at", "2022-10-31 13:23:33.469989"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 26ms (Views: 2.0ms | ActiveRecord: 11.2ms | Allocations: 2265)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-31 16:23:35 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>3, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "created_at"=>"2022-10-31T13:23:33.469Z", "updated_at"=>"2022-10-31T13:23:33.469Z", "name"=>nil, "patient"=>{"id"=>3, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "created_at"=>"2022-10-31T13:23:33.469Z", "updated_at"=>"2022-10-31T13:23:33.469Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007fe568e36980>, params: {"id"=>3, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "created_at"=>"2022-10-31T13:23:33.469Z", "updated_at"=>"2022-10-31T13:23:33.469Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>3, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "created_at"=>"2022-10-31T13:23:33.469Z", "updated_at"=>"2022-10-31T13:23:33.469Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.4ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", "1234"], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-10-04"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Female"], ["patient_status", ""], ["created_at", "2022-10-31 13:23:35.525433"], ["updated_at", "2022-10-31 13:23:35.525433"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 22ms (Views: 1.2ms | ActiveRecord: 11.8ms | Allocations: 2316)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-31 16:23:55 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>4, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "created_at"=>"2022-10-31T13:23:35.525Z", "updated_at"=>"2022-10-31T13:23:35.525Z", "name"=>nil, "patient"=>{"id"=>4, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "created_at"=>"2022-10-31T13:23:35.525Z", "updated_at"=>"2022-10-31T13:23:35.525Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007fe568dd3830>, params: {"id"=>4, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "created_at"=>"2022-10-31T13:23:35.525Z", "updated_at"=>"2022-10-31T13:23:35.525Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>4, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "created_at"=>"2022-10-31T13:23:35.525Z", "updated_at"=>"2022-10-31T13:23:35.525Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (2.2ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", "1234"], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-10-04"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Female"], ["patient_status", ""], ["created_at", "2022-10-31 13:23:55.513748"], ["updated_at", "2022-10-31 13:23:55.513748"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 43ms (Views: 6.8ms | ActiveRecord: 10.6ms | Allocations: 2297)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-10-31 16:25:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-10-31 16:25:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-10-31 16:25:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-10-31 16:25:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started POST "/patients" for 127.0.0.1 at 2022-10-31 16:26:20 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"0000", "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "patient"=>{"ticket_no"=>"0000", "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}}
+[31mUnpermitted parameter: :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007fe56872a768>, params: {"ticket_no"=>"0000", "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"0000", "patient_no"=>"1234", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-10-04", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (4.4ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", "1234"], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-10-04"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-10-31 13:26:20.618495"], ["updated_at", "2022-10-31 13:26:20.618495"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 25ms (Views: 2.2ms | ActiveRecord: 12.7ms | Allocations: 2246)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-31 16:26:22 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"", "patient_no"=>"", "reg_date"=>"", "address"=>"", "dob"=>"", "contact_no"=>"", "email"=>"", "guardian"=>"", "relation"=>"", "gender"=>"", "patient_status"=>"", "patient"=>{"ticket_no"=>"", "patient_no"=>"", "reg_date"=>"", "address"=>"", "dob"=>"", "contact_no"=>"", "email"=>"", "guardian"=>"", "relation"=>"", "gender"=>"", "patient_status"=>""}}
+[31mUnpermitted parameter: :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007fe5685f8408>, params: {"ticket_no"=>"", "patient_no"=>"", "reg_date"=>"", "address"=>"", "dob"=>"", "contact_no"=>"", "email"=>"", "guardian"=>"", "relation"=>"", "gender"=>"", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"", "patient_no"=>"", "reg_date"=>"", "address"=>"", "dob"=>"", "contact_no"=>"", "email"=>"", "guardian"=>"", "relation"=>"", "gender"=>"", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.5ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", ""], ["username", nil], ["patient_no", ""], ["reg_date", ""], ["address", ""], ["dob", ""], ["contact_no", ""], ["email", ""], ["guardian", ""], ["relation", ""], ["gender", ""], ["patient_status", ""], ["created_at", "2022-10-31 13:26:22.555727"], ["updated_at", "2022-10-31 13:26:22.555727"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 14ms (Views: 1.0ms | ActiveRecord: 5.3ms | Allocations: 2246)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-10-31 16:26:37 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"ticket_no"=>"", "patient_no"=>"", "reg_date"=>"", "address"=>"", "dob"=>"", "contact_no"=>"", "email"=>"", "guardian"=>"", "relation"=>"", "gender"=>"", "patient_status"=>"", "patient"=>{"ticket_no"=>"", "patient_no"=>"", "reg_date"=>"", "address"=>"", "dob"=>"", "contact_no"=>"", "email"=>"", "guardian"=>"", "relation"=>"", "gender"=>"", "patient_status"=>""}}
+[31mUnpermitted parameter: :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007fe56847baf8>, params: {"ticket_no"=>"", "patient_no"=>"", "reg_date"=>"", "address"=>"", "dob"=>"", "contact_no"=>"", "email"=>"", "guardian"=>"", "relation"=>"", "gender"=>"", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"", "patient_no"=>"", "reg_date"=>"", "address"=>"", "dob"=>"", "contact_no"=>"", "email"=>"", "guardian"=>"", "relation"=>"", "gender"=>"", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (2.7ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", ""], ["username", nil], ["patient_no", ""], ["reg_date", ""], ["address", ""], ["dob", ""], ["contact_no", ""], ["email", ""], ["guardian", ""], ["relation", ""], ["gender", ""], ["patient_status", ""], ["created_at", "2022-10-31 13:26:37.179857"], ["updated_at", "2022-10-31 13:26:37.179857"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 24ms (Views: 1.4ms | ActiveRecord: 12.9ms | Allocations: 2246)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2022-11-01 09:21:03 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaffsController#index as */*
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/controllers/staffs_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 13603)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2022-11-01 09:21:07 +0300
+Processing by StaffsController#index as */*
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/controllers/staffs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 626)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 09:21:11 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 2.0ms | Allocations: 22871)
+
+
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 09:28:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started POST "/users/signup" for 127.0.0.1 at 2022-11-01 09:29:50 +0300
+Processing by Users::Devise::RegistrationsController#create as */*
+  Parameters: {"username"=>"MarkBrian", "email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"username"=>"MarkBrian", "email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :username, :registration. Context: { controller: Users::Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f386c49b780>, params: {"username"=>"MarkBrian", "email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users/devise/registrations", "action"=>"create", "registration"=>{"username"=>"MarkBrian", "email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (6.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kariukimarkbrian@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "kariukimarkbrian@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["created_at", "2022-11-01 06:29:51.183652"], ["updated_at", "2022-11-01 06:29:51.183652"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 416ms (Views: 0.3ms | ActiveRecord: 25.9ms | Allocations: 28736)
+
+
+Started POST "/users/signin" for 127.0.0.1 at 2022-11-01 09:30:21 +0300
+Processing by Users::Devise::SessionsController#create as */*
+  Parameters: {"email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f386ce131f0>, params: {"email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kariukimarkbrian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:19:in `create'
+[31mUnpermitted parameter: :session. Context: { controller: Users::Devise::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f386ce131f0>, params: {"email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]", "controller"=>"users/devise/sessions", "action"=>"create", "session"=>{"email"=>"kariukimarkbrian@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/devise/sessions_controller.rb:21:in `create'
+Completed 200 OK in 346ms (Views: 1.4ms | ActiveRecord: 11.0ms | Allocations: 2485)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 09:31:48 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"username"=>"0741242922", "ticket_no"=>"0000", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "patient"=>{"ticket_no"=>"0000", "username"=>"0741242922", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}}
+[31mUnpermitted parameters: :username, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f386cd35800>, params: {"username"=>"0741242922", "ticket_no"=>"0000", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"0000", "username"=>"0741242922", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (2.0ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-09"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 06:31:48.930425"], ["updated_at", "2022-11-01 06:31:48.930425"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 38ms (Views: 2.8ms | ActiveRecord: 16.7ms | Allocations: 20205)
+
+
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 13:42:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 13:45:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 13:45:14 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started DELETE "/users/signout" for 127.0.0.1 at 2022-11-01 13:45:29 +0300
+Processing by Users::Devise::SessionsController#destroy as */*
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 140ms (Views: 0.6ms | ActiveRecord: 20.9ms | Allocations: 25600)
+
+
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 13:46:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 13:46:19 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 376ms (Views: 365.9ms | ActiveRecord: 2.9ms | Allocations: 21246)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-11-01 13:46:41 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-11-01 13:46:41 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 13:46:41 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.2ms | Allocations: 2457)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-11-01 13:46:51 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 13:46:52 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 2457)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 13:46:57 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.4ms | Allocations: 2458)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 13:47:01 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.8ms | Allocations: 2444)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 13:47:23 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (2.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 2.1ms | Allocations: 2444)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 13:47:50 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (5.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 62ms (Views: 55.6ms | ActiveRecord: 5.6ms | Allocations: 2444)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 13:48:44 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (13.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 203ms (Views: 189.5ms | ActiveRecord: 13.0ms | Allocations: 2444)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 13:49:02 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms | Allocations: 2445)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2022-11-01 13:49:04 +0300
+Processing by StaffsController#index as */*
+  [1m[36mStaff Load (10.2ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/controllers/staffs_controller.rb:8:in `index'
+Completed 200 OK in 52ms (Views: 17.4ms | ActiveRecord: 10.2ms | Allocations: 909)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-11-01 14:10:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/staffs" for 127.0.0.1 at 2022-11-01 14:10:27 +0300
+Processing by StaffsController#index as */*
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/controllers/staffs_controller.rb:8:in `index'
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 14.2ms | Allocations: 769)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2022-11-01 14:10:30 +0300
+Processing by StaffsController#index as */*
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/controllers/staffs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 610)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2022-11-01 14:10:35 +0300
+Processing by StaffsController#index as */*
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/controllers/staffs_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.7ms | Allocations: 610)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 14:10:36 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 0.3ms | Allocations: 2513)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2022-11-01 14:10:43 +0300
+Processing by StaffsController#index as */*
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/controllers/staffs_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 610)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 14:11:43 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.1ms | Allocations: 2444)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2022-11-01 14:11:46 +0300
+Processing by StaffsController#index as */*
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  ↳ app/controllers/staffs_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 610)
+
+
+Started GET "/patients" for 127.0.0.1 at 2022-11-01 14:11:49 +0300
+Processing by PatientsController#index as */*
+  [1m[36mPatient Load (1.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/controllers/patients_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 1.1ms | Allocations: 2444)
+
+
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 15:14:23 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 15:14:31 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 15:15:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 15:19:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started GET "/holder.js/100px180" for 127.0.0.1 at 2022-11-01 15:31:43 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/holder.js/100px180"):
+  
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:32:10 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"username"=>"gagga", "ticket_no"=>"0000", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "patient"=>{"ticket_no"=>"0000", "username"=>"gagga", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}}
+[31mUnpermitted parameters: :username, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055e2e3dd2ce8>, params: {"username"=>"gagga", "ticket_no"=>"0000", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"0000", "username"=>"gagga", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (14.7ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-09"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:32:11.473406"], ["updated_at", "2022-11-01 12:32:11.473406"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 194ms (Views: 12.5ms | ActiveRecord: 33.6ms | Allocations: 22336)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:32:22 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>10, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:32:11.473Z", "updated_at"=>"2022-11-01T12:32:11.473Z", "name"=>nil, "patient"=>{"id"=>10, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:32:11.473Z", "updated_at"=>"2022-11-01T12:32:11.473Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055e2e5f5d2f0>, params: {"id"=>10, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:32:11.473Z", "updated_at"=>"2022-11-01T12:32:11.473Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>10, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:32:11.473Z", "updated_at"=>"2022-11-01T12:32:11.473Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.7ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-09"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:32:22.173387"], ["updated_at", "2022-11-01 12:32:22.173387"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 27ms (Views: 2.1ms | ActiveRecord: 6.4ms | Allocations: 2314)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:32:57 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>11, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:32:22.173Z", "updated_at"=>"2022-11-01T12:32:22.173Z", "name"=>nil, "patient"=>{"id"=>11, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:32:22.173Z", "updated_at"=>"2022-11-01T12:32:22.173Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055e2e5ef67f8>, params: {"id"=>11, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:32:22.173Z", "updated_at"=>"2022-11-01T12:32:22.173Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>11, "ticket_no"=>"0000", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-09", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:32:22.173Z", "updated_at"=>"2022-11-01T12:32:22.173Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.3ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-09"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:32:57.871730"], ["updated_at", "2022-11-01 12:32:57.871730"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 37ms (Views: 4.3ms | ActiveRecord: 12.5ms | Allocations: 2302)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-11-01 15:35:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:36:09 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"username"=>"0741242922", "ticket_no"=>"0000", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "patient"=>{"ticket_no"=>"0000", "username"=>"0741242922", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>""}}
+[31mUnpermitted parameters: :username, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f8c72ce8>, params: {"username"=>"0741242922", "ticket_no"=>"0000", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"0000", "username"=>"0741242922", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (2.2ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-16"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Female"], ["patient_status", ""], ["created_at", "2022-11-01 12:36:09.704209"], ["updated_at", "2022-11-01 12:36:09.704209"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 26ms (Views: 0.9ms | ActiveRecord: 8.4ms | Allocations: 2256)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-11-01 15:36:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:37:38 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"username"=>"0741242922", "ticket_no"=>"0000", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "patient"=>{"ticket_no"=>"0000", "username"=>"0741242922", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>""}}
+[31mUnpermitted parameters: :username, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055e2e5d2e9c0>, params: {"username"=>"0741242922", "ticket_no"=>"0000", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"0000", "username"=>"0741242922", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Female", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.9ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "0000"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-10"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Female"], ["patient_status", ""], ["created_at", "2022-11-01 12:37:38.525963"], ["updated_at", "2022-11-01 12:37:38.525963"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 24ms (Views: 1.6ms | ActiveRecord: 5.6ms | Allocations: 2273)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:39:04 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"username"=>"0741242922", "ticket_no"=>"1234", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "patient"=>{"ticket_no"=>"1234", "username"=>"0741242922", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}}
+[31mUnpermitted parameters: :username, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f8ba2fc0>, params: {"username"=>"0741242922", "ticket_no"=>"1234", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"1234", "username"=>"0741242922", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.9ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-16"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:39:04.610875"], ["updated_at", "2022-11-01 12:39:04.610875"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 24ms (Views: 1.2ms | ActiveRecord: 5.3ms | Allocations: 2274)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:39:17 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>15, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:04.610Z", "updated_at"=>"2022-11-01T12:39:04.610Z", "name"=>nil, "patient"=>{"id"=>15, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:04.610Z", "updated_at"=>"2022-11-01T12:39:04.610Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f8b41ec8>, params: {"id"=>15, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:04.610Z", "updated_at"=>"2022-11-01T12:39:04.610Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>15, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:04.610Z", "updated_at"=>"2022-11-01T12:39:04.610Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.8ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-16"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:39:17.511516"], ["updated_at", "2022-11-01 12:39:17.511516"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 19ms (Views: 1.6ms | ActiveRecord: 6.5ms | Allocations: 2297)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:39:18 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>16, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:17.511Z", "updated_at"=>"2022-11-01T12:39:17.511Z", "name"=>nil, "patient"=>{"id"=>16, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:17.511Z", "updated_at"=>"2022-11-01T12:39:17.511Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f8b02b10>, params: {"id"=>16, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:17.511Z", "updated_at"=>"2022-11-01T12:39:17.511Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>16, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:17.511Z", "updated_at"=>"2022-11-01T12:39:17.511Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (7.1ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-16"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:39:18.675375"], ["updated_at", "2022-11-01 12:39:18.675375"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 56ms (Views: 8.4ms | ActiveRecord: 13.2ms | Allocations: 2297)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:39:19 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>17, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:18.675Z", "updated_at"=>"2022-11-01T12:39:18.675Z", "name"=>nil, "patient"=>{"id"=>17, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:18.675Z", "updated_at"=>"2022-11-01T12:39:18.675Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f8ac2ee8>, params: {"id"=>17, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:18.675Z", "updated_at"=>"2022-11-01T12:39:18.675Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>17, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:18.675Z", "updated_at"=>"2022-11-01T12:39:18.675Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (3.2ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-16"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:39:19.777079"], ["updated_at", "2022-11-01 12:39:19.777079"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (35.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 76ms (Views: 2.8ms | ActiveRecord: 39.2ms | Allocations: 2298)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:39:20 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>18, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:19.777Z", "updated_at"=>"2022-11-01T12:39:19.777Z", "name"=>nil, "patient"=>{"id"=>18, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:19.777Z", "updated_at"=>"2022-11-01T12:39:19.777Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f8a934b8>, params: {"id"=>18, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:19.777Z", "updated_at"=>"2022-11-01T12:39:19.777Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>18, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-16", "contact_no"=>"0741242922", "email"=>"kariukimarkbrian@gmail.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:39:19.777Z", "updated_at"=>"2022-11-01T12:39:19.777Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (5.2ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-16"], ["contact_no", "0741242922"], ["email", "kariukimarkbrian@gmail.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:39:20.694007"], ["updated_at", "2022-11-01 12:39:20.694007"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 47ms (Views: 4.1ms | ActiveRecord: 10.8ms | Allocations: 2298)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-11-01 15:39:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:41:01 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"username"=>"Kariuki Karanja", "ticket_no"=>"1234", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "patient"=>{"ticket_no"=>"1234", "username"=>"Kariuki Karanja", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}}
+[31mUnpermitted parameters: :username, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f8949dc8>, params: {"username"=>"Kariuki Karanja", "ticket_no"=>"1234", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "controller"=>"patients", "action"=>"create", "patient"=>{"ticket_no"=>"1234", "username"=>"Kariuki Karanja", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.5ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-10"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:41:01.402050"], ["updated_at", "2022-11-01 12:41:01.402050"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 22ms (Views: 2.3ms | ActiveRecord: 6.8ms | Allocations: 2256)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:41:16 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>20, "ticket_no"=>"1234", "username"=>"9999", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:01.402Z", "updated_at"=>"2022-11-01T12:41:01.402Z", "name"=>nil, "patient"=>{"id"=>20, "ticket_no"=>"1234", "username"=>"9999", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:01.402Z", "updated_at"=>"2022-11-01T12:41:01.402Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055e2e55b1df0>, params: {"id"=>20, "ticket_no"=>"1234", "username"=>"9999", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:01.402Z", "updated_at"=>"2022-11-01T12:41:01.402Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>20, "ticket_no"=>"1234", "username"=>"9999", "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:01.402Z", "updated_at"=>"2022-11-01T12:41:01.402Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (2.0ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-10"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:41:16.681631"], ["updated_at", "2022-11-01 12:41:16.681631"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 26ms (Views: 2.5ms | ActiveRecord: 8.7ms | Allocations: 2297)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:41:45 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>21, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:16.681Z", "updated_at"=>"2022-11-01T12:41:16.681Z", "name"=>nil, "patient"=>{"id"=>21, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:16.681Z", "updated_at"=>"2022-11-01T12:41:16.681Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f8856d30>, params: {"id"=>21, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:16.681Z", "updated_at"=>"2022-11-01T12:41:16.681Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>21, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:16.681Z", "updated_at"=>"2022-11-01T12:41:16.681Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.4ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-10"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:41:45.140428"], ["updated_at", "2022-11-01 12:41:45.140428"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 16ms (Views: 0.8ms | ActiveRecord: 5.8ms | Allocations: 2297)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:41:49 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>22, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:45.140Z", "updated_at"=>"2022-11-01T12:41:45.140Z", "name"=>nil, "patient"=>{"id"=>22, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:45.140Z", "updated_at"=>"2022-11-01T12:41:45.140Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x000055e2e5206340>, params: {"id"=>22, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:45.140Z", "updated_at"=>"2022-11-01T12:41:45.140Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>22, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:45.140Z", "updated_at"=>"2022-11-01T12:41:45.140Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (2.4ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-10"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:41:49.999669"], ["updated_at", "2022-11-01 12:41:49.999669"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 19ms (Views: 0.9ms | ActiveRecord: 8.6ms | Allocations: 2297)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:41:50 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>23, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:49.999Z", "updated_at"=>"2022-11-01T12:41:49.999Z", "name"=>nil, "patient"=>{"id"=>23, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:49.999Z", "updated_at"=>"2022-11-01T12:41:49.999Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f877da80>, params: {"id"=>23, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:49.999Z", "updated_at"=>"2022-11-01T12:41:49.999Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>23, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:49.999Z", "updated_at"=>"2022-11-01T12:41:49.999Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.9ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-10"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:41:50.760065"], ["updated_at", "2022-11-01 12:41:50.760065"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 18ms (Views: 1.2ms | ActiveRecord: 6.3ms | Allocations: 2298)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:41:51 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>24, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:50.760Z", "updated_at"=>"2022-11-01T12:41:50.760Z", "name"=>nil, "patient"=>{"id"=>24, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:50.760Z", "updated_at"=>"2022-11-01T12:41:50.760Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f863f0b0>, params: {"id"=>24, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:50.760Z", "updated_at"=>"2022-11-01T12:41:50.760Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>24, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:50.760Z", "updated_at"=>"2022-11-01T12:41:50.760Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (0.6ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-10"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:41:51.364149"], ["updated_at", "2022-11-01 12:41:51.364149"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 16ms (Views: 0.8ms | ActiveRecord: 5.8ms | Allocations: 2297)
+
+
+Started POST "/patients" for 127.0.0.1 at 2022-11-01 15:41:51 +0300
+Processing by PatientsController#create as */*
+  Parameters: {"id"=>25, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:51.364Z", "updated_at"=>"2022-11-01T12:41:51.364Z", "name"=>nil, "patient"=>{"id"=>25, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:51.364Z", "updated_at"=>"2022-11-01T12:41:51.364Z", "name"=>nil}}
+[31mUnpermitted parameters: :id, :username, :created_at, :updated_at, :name, :patient. Context: { controller: PatientsController, action: create, request: #<ActionDispatch::Request:0x00007f87f84f71f8>, params: {"id"=>25, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:51.364Z", "updated_at"=>"2022-11-01T12:41:51.364Z", "name"=>nil, "controller"=>"patients", "action"=>"create", "patient"=>{"id"=>25, "ticket_no"=>"1234", "username"=>nil, "patient_no"=>"", "reg_date"=>"10/2/2022", "address"=>"", "dob"=>"2022-11-10", "contact_no"=>"0741242922", "email"=>"markbrian.karanja@student.moringaschool.com", "guardian"=>"huns", "relation"=>"", "gender"=>"Male", "patient_status"=>"", "created_at"=>"2022-11-01T12:41:51.364Z", "updated_at"=>"2022-11-01T12:41:51.364Z", "name"=>nil}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mPatient Create (1.1ms)[0m  [1m[32mINSERT INTO "patients" ("ticket_no", "username", "patient_no", "reg_date", "address", "dob", "contact_no", "email", "guardian", "relation", "gender", "patient_status", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ticket_no", "1234"], ["username", nil], ["patient_no", ""], ["reg_date", "10/2/2022"], ["address", ""], ["dob", "2022-11-10"], ["contact_no", "0741242922"], ["email", "markbrian.karanja@student.moringaschool.com"], ["guardian", "huns"], ["relation", ""], ["gender", "Male"], ["patient_status", ""], ["created_at", "2022-11-01 12:41:51.964547"], ["updated_at", "2022-11-01 12:41:51.964547"], ["name", nil]]
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:20:in `create'
+Completed 201 Created in 15ms (Views: 0.9ms | ActiveRecord: 5.4ms | Allocations: 2297)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221024131614)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_unlock_token" ON "users" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024131614"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateAdmins (20221024132055)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_confirmation_token" ON "admins" ("confirmation_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_unlock_token" ON "admins" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024132055"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateManagers (20221025100727)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "managers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_email" ON "managers" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_reset_password_token" ON "managers" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_confirmation_token" ON "managers" ("confirmation_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_unlock_token" ON "managers" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221025100727"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePatients (20221025114421)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ticket_no" varchar, "username" varchar, "patient_no" varchar, "reg_date" varchar, "address" varchar, "dob" varchar, "contact_no" varchar, "email" varchar, "guardian" varchar, "relation" varchar, "gender" varchar, "patient_status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221025114421"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTickets (20221027184009)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_name" varchar, "inventory_item" varchar, "item" varchar, "discount" varchar, "total_amount" varchar, "receipt_no" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221027184009"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLaboratories (20221027184412)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "laboratories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "test_name" varchar, "cost_of_test" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221027184412"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePharmacies (20221028085417)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "pharmacies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "ticket_id" integer, "remarks" varchar, "inventory_item" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221028085417"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPatientNameToPatients (20221030132229)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "patients" ADD "name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221030132229"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStaffs (20221031060900)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "staffs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Job_description" varchar, "Contact" integer, "Email" varchar, "Start_time" integer, "End_time" integer, "Status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221031060900"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-01 12:57:36.822868"], ["updated_at", "2022-11-01 12:57:36.822868"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221024131614)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_unlock_token" ON "users" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024131614"]]
+  [1m[36mTRANSACTION (25.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateAdmins (20221024132055)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_confirmation_token" ON "admins" ("confirmation_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_unlock_token" ON "admins" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024132055"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateManagers (20221025100727)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "managers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_email" ON "managers" ("email")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_reset_password_token" ON "managers" ("reset_password_token")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_confirmation_token" ON "managers" ("confirmation_token")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_unlock_token" ON "managers" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221025100727"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePatients (20221025114421)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ticket_no" varchar, "username" varchar, "patient_no" varchar, "reg_date" varchar, "address" varchar, "dob" varchar, "contact_no" varchar, "email" varchar, "guardian" varchar, "relation" varchar, "gender" varchar, "patient_status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221025114421"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPatientNameToPatients (20221030132229)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "patients" ADD "name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221030132229"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStaffs (20221031060900)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "staffs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Job_description" varchar, "Contact" integer, "Email" varchar, "Start_time" integer, "End_time" integer, "Status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221031060900"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRegForms (20221101131436)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "reg_forms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "reg_number" varchar, "lab_number" integer, "bill" varchar, "bill_status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221101131436"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRegFormPatients (20221101131846)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reg_form_patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "reg_form_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221101131846"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-01 13:32:52.885870"], ["updated_at", "2022-11-01 13:32:52.885870"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221024131614)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_unlock_token" ON "users" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024131614"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateAdmins (20221024132055)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_confirmation_token" ON "admins" ("confirmation_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_unlock_token" ON "admins" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024132055"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateManagers (20221025100727)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "managers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6), "last_sign_in_at" datetime(6), "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime(6), "confirmation_sent_at" datetime(6), "unconfirmed_email" varchar, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" varchar, "locked_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_email" ON "managers" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_reset_password_token" ON "managers" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_confirmation_token" ON "managers" ("confirmation_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_managers_on_unlock_token" ON "managers" ("unlock_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221025100727"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePatients (20221025114421)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "reg_date" varchar, "address" varchar, "dob" varchar, "contact_no" varchar, "email" varchar, "guardian" varchar, "relation" varchar, "gender" varchar, "patient_status" varchar, "doctors_remarks" varchar, "laboratory_comments" varchar, "doctors__prescription" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221025114421"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStaffs (20221031060900)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "staffs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Job_description" varchar, "Contact" integer, "Email" varchar, "Start_time" integer, "End_time" integer, "Status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221031060900"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRegForms (20221101131436)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "reg_forms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "reg_number" varchar, "lab_number" integer, "bill" varchar, "bill_status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221101131436"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRegFormPatients (20221101131846)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "reg_form_patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "reg_form_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221101131846"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-01 13:40:54.827406"], ["updated_at", "2022-11-01 13:40:54.827406"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
+  resources :reg_form_patients
+  resources :reg_forms
   resources :staffs
-  resources :laboratories
-  resources :tickets
   resources :patients
-  resources :pharmacies
   # resources :users
 
   devise_for :managers, path: 'managers', path_names:{

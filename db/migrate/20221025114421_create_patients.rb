@@ -1,9 +1,7 @@
 class CreatePatients < ActiveRecord::Migration[7.0]
   def change
     create_table :patients do |t|
-      t.string :ticket_no
       t.string :username
-      t.string :patient_no
       t.string :reg_date
       t.string :address
       t.string :dob
@@ -13,7 +11,10 @@ class CreatePatients < ActiveRecord::Migration[7.0]
       t.string :relation
       t.string :gender
       t.string :patient_status
-      t.timestamps 
+      t.string :doctors_remarks
+      t.string :laboratory_comments
+      t.string :doctors__prescription
+      t.timestamps
     end
   end
 end

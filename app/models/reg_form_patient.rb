@@ -1,0 +1,2 @@
+class RegFormPatient < ApplicationRecord
+end

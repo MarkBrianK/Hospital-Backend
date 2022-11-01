@@ -1,0 +1,2 @@
+class RegFormPatientsController < ApplicationController
+end

@@ -1,4 +1,42 @@
 Rails.application.routes.draw do
+  resources :patients
+  # resources :users
+  resources :managers
+
+
+  devise_for :accountants, path: 'accountant', path_names:{
+    sign_in: 'signin',
+    sign_out: 'signout',
+    registration: 'signup'
+  }, controllers:{
+    sessions: 'accountants/sessions',
+    password: 'accountants/passwords',
+    registrations:'accountants/registrations'
+  }
+
+
+  devise_for :laboratories, path: 'laboratory', path_names:{
+    sign_in: 'signin',
+    sign_out: 'signout',
+    registration: 'signup'
+  }, controllers:{
+    sessions: 'laboratories/sessions',
+    password: 'laboratories/passwords',
+    registrations:'laboratories/registrations'
+  }
+
+
+  devise_for :pharmacies, path: 'pharmacy', path_names:{
+    sign_in: 'signin',
+    sign_out: 'signout',
+    registration: 'signup'
+  }, controllers:{
+    sessions: 'pharmacies/sessions',
+    password: 'pharmacies/passwords',
+    registrations:'pharmacies/registrations'
+  }
+
+
   devise_for :doctors, path: 'doctors', path_names:{
     sign_in: 'signin',
     sign_out: 'signout',
@@ -8,9 +46,7 @@ Rails.application.routes.draw do
     password: 'doctors/passwords',
     registrations:'doctors/registrations'
   }
-  resources :patients
-  # resources :users
-  resources :managers
+  
 
   devise_for :managers, path: 'managers', path_names:{
     sign_in: 'signin',
@@ -21,13 +57,13 @@ Rails.application.routes.draw do
     password: 'managers/passwords',
     registrations:'managers/registrations'
   }
+
   # resources :users
   devise_for :admins, path: 'admin', path_names:{
     sign_in: 'signin',
     sign_out: 'signout',
     registration: 'signup'
-  },
-  controllers:{
+  }, controllers:{
     sessions: 'admin/sessions',
     password: 'admin/passwords',
     registrations: 'admin/registrations'
@@ -37,9 +73,7 @@ Rails.application.routes.draw do
     sign_in: 'signin',
     sign_out: 'signout',
     registration: 'signup'
-  },
-
-  controllers:{
+  }, controllers:{
     sessions: 'users/devise/sessions',
     password: 'users/devise/passwords',
     registrations: 'users/devise/registrations'

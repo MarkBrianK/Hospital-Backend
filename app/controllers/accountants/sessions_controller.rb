@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-class Doctors::SessionsController < Devise::SessionsController
-    respond_to :json
-
-  respond_to :json
+class Accountants::SessionsController < Devise::SessionsController
+      respond_to :json
 
   # before_action :configure_sign_in_params, only: [:create]
 
@@ -29,7 +27,7 @@ class Doctors::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
     def create
-    @accountant = Doctor.find_by_email(user_params[:email])
+    @accountant = Accountant.find_by_email(user_params[:email])
     if @accountant && @accountant.valid_password?(user_params[:password])
       sign_in :user, @accountant
       render json: @accountant

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :reg_forms
   resources :staffs
   resources :patients
+  resources :reg_form_patients
+  resources :reg_forms
   # resources :users
 
   devise_for :managers, path: 'managers', path_names:{

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_01_165925) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_113349) do
   create_table "accountants", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -166,6 +166,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_01_165925) do
     t.index ["email"], name: "index_pharmacies_on_email", unique: true
     t.index ["reset_password_token"], name: "index_pharmacies_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_pharmacies_on_unlock_token", unique: true
+  end
+
+  create_table "pharmas", force: :cascade do |t|
+    t.integer "patient_id"
+    t.string "ticket_id"
+    t.string "remark"
+    t.string "inventory_item"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

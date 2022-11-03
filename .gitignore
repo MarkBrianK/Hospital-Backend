@@ -1,4 +1,5 @@
-/log/*
-/tmp/*
+/log
+authy
+/tmp
 !/log/.keep
 !/tmp/.keep

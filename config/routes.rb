@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :reg_form_patients
-  resources :reg_forms
-  resources :staffs
+  resources :pharmas
   resources :patients
   resources :reg_form_patients
   resources :reg_forms
@@ -51,7 +49,7 @@ Rails.application.routes.draw do
     password: 'doctors/passwords',
     registrations:'doctors/registrations'
   }
-  
+
 
   devise_for :managers, path: 'managers', path_names:{
     sign_in: 'signin',
